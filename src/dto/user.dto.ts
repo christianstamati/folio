@@ -1,6 +1,7 @@
 export type UserDto = {
   id: string;
-  name?: string;
+  name: string | null;
   email: string;
-  createdAt: string;
+  emailVerified: Date | null;
+  image: string | null;
 };

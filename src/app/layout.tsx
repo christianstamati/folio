@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Next Sail",
+  title: "Turbo Ship",
   description: "The fastest way to start a next project",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
