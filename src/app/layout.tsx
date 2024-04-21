@@ -5,7 +5,7 @@ import "../styles/globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Falco",
+  title: "Next Sail",
   description: "The fastest way to start a next project",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
