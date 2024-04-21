@@ -1,15 +1,23 @@
-import { getUsers } from "@/server/data-access/user/get-users.persistence";
+import { getTodos } from "@/server/data-access/todo/get-todos.persistence";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { createTodoAction } from "@/app/dashboard/_actions/create-todo.action";
+import TodoCard from "@/app/dashboard/todo-card";
 
 export default async function Dashboard() {
-  const users = await getUsers();
+  const todos = await getTodos();
   return (
-    <div>
-      <h1>DASHBOARD</h1>
-      <div>
-        {users.map((value, index) => (
-          <div key={index}>{JSON.stringify(value, null, 2)}</div>
+    <div className="flex flex-col gap-y-3 p-4">
+      <h1 className="text-3xl">Dashboard</h1>
+      <div className="flex flex-col gap-y-2">
+        {todos.map((item, index) => (
+          <TodoCard key={index} todo={item}></TodoCard>
         ))}
       </div>
+      <form action={createTodoAction} className="flex gap-x-2">
+        <Input name={"name"} />
+        <Button type={"submit"}>ADD</Button>
+      </form>
     </div>
   );
 }
