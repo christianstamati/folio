@@ -1,5 +1,5 @@
 {
-  "name": "next-sail",
+  "name": "turbo-ship",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -26,6 +26,7 @@
     "drizzle-orm": "^0.30.8",
     "lucide-react": "^0.372.0",
     "next": "14.2.2",
+    "next-auth": "^5.0.0-beta.16",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",

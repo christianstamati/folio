@@ -3,8 +3,16 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { createTodoAction } from "@/app/dashboard/_actions/create-todo.action";
 import TodoCard from "@/app/dashboard/todo-card";
+import { auth } from "@/server/auth";
+import Link from "next/link";
 
 export default async function Dashboard() {
+  const session = await auth();
+
+  if (!session) {
+    return <div>Not authenticated</div>;
+  }
+
   const todos = await getTodos();
   return (
     <div className="flex flex-col gap-y-3 p-4">
@@ -18,6 +26,7 @@ export default async function Dashboard() {
         <Input name={"name"} />
         <Button type={"submit"}>ADD</Button>
       </form>
+      <Link href={"/api/auth/signout?callbackUrl=/"}>SIGN OUT</Link>
     </div>
   );
 }
