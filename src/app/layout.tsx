@@ -2,13 +2,18 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Link from "next/link";
+import Header, { Nav } from "@/app/header";
+import { Home } from "lucide-react";
+import Logo from "@/components/logo";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Turbo Ship",
-  description: "The fastest way to start a next project",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "Christian Stamati",
+  description: "Building digital products",
+  icons: [{ rel: "icon", url: "/favicon.png" }],
 };
 
 export default function RootLayout({
@@ -25,7 +30,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
+
+          <div
+            className={`fixed bottom-0 left-0 right-0 z-50 bg-opacity-30 backdrop-blur-lg backdrop-filter sm:hidden`}
+          >
+            <Nav className="grid w-full grid-cols-5" />
+          </div>
         </ThemeProvider>
       </body>
     </html>

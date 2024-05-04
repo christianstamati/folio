@@ -1,8 +1,8 @@
-export default function Home() {
+export default function About() {
   return (
     <div className="flex items-center justify-center">
-      <div className={"mt-36 max-w-[520px] px-8 md:max-w-[620px]"}>
-        <h1 className="pb-2 text-4xl leading-tight">Home page</h1>
+      <div className={"mt-36 max-w-xl"}>
+        <h1 className="pb-2 text-4xl leading-tight">About</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sapien
           sem, imperdiet quis porta id, interdum eget eros. Mauris dapibus
