@@ -38,11 +38,10 @@ function NavItem(props: {
   return (
     <Link
       href={props.href}
-      className="m-1 rounded-xl px-6 py-5 hover:bg-primary/5  md:px-8 "
+      className="m-1 flex items-center justify-center rounded-xl px-6 py-5 hover:bg-primary/5 md:px-8"
     >
-      <div className={`${props.selected ? "" : "opacity-30"} text-center`}>
+      <div className={`${props.selected ? "" : "opacity-30"}`}>
         {cloneElement(props.icon, {
-          className: "w-full min-w-[28px]",
           stroke: "bold",
           size: 28,
           set: props.selected ? "bold" : "light",
@@ -85,12 +84,12 @@ function Header() {
   }, []);
   return (
     <div
-      className={`fixed left-0 right-0 top-0 z-50 ${visible ? "" : "sm:-translate-y-full"} flex justify-center bg-opacity-30 backdrop-blur-lg backdrop-filter transition-all duration-300 ease-in-out`}
+      className={`fixed left-0 right-0 top-0 z-50 ${visible ? "" : "sm:-translate-y-full"} glass flex justify-center transition-all duration-300 ease-in-out`}
     >
       <header className="grid min-h-16 w-full max-w-7xl grid-cols-[1fr_50vw_1fr] sm:grid-cols-[1fr_min-content_1fr]">
         <div className="flex items-center justify-center sm:justify-start">
           <Link href={"/"} className="ml-0 sm:ml-4">
-            <Logo outline />
+            <p className={"text-xl font-bold"}>CD</p>
           </Link>
         </div>
         <div className="row-start-1 flex sm:row-start-auto">
