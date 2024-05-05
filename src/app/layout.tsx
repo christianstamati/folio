@@ -28,7 +28,6 @@ export default function RootLayout({
         >
           <Header />
           {children}
-
           <div className={`glass fixed bottom-0 left-0 right-0 z-50 sm:hidden`}>
             <Nav className="grid w-full grid-cols-5" />
           </div>
