@@ -1,8 +1,8 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-  @layer base {
+@layer base {
     :root {
       --background: 0 0% 100%;
       --foreground: 0 0% 3.9%;
@@ -66,16 +66,14 @@
     }
   }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
-    .glass{
-      @apply bg-background/70 backdrop-blur-xl backdrop-filter;
-    }
+@layer base {
+  * {
+    @apply border-border;
   }
-
-
+  body {
+    @apply bg-background text-foreground;
+  }
+  .glass{
+    @apply bg-background/70 backdrop-blur-xl backdrop-filter;
+  }
+}

@@ -4,8 +4,8 @@ import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Home, User, Folder, Message, Category } from "react-iconly";
 import { usePathname } from "next/navigation";
-import Logo from "@/components/logo";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navigation = [
   {
