@@ -33,6 +33,9 @@
       --ring: 0 0% 3.9%;
 
       --radius: 0.5rem;
+
+      --paragraph: 0 0% 40%;
+
     }
 
     .dark {
@@ -63,6 +66,8 @@
       --border: 0 0% 14.9%;
       --input: 0 0% 14.9%;
       --ring: 0 0% 83.1%;
+
+      --paragraph: 0 0% 50%;
     }
   }
 
@@ -70,10 +75,16 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   .glass{
     @apply bg-background/70 backdrop-blur-xl backdrop-filter;
+  }
+
+  p{
+    @apply text-paragraph;
   }
 }

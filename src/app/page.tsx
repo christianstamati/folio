@@ -1,102 +1,49 @@
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { Github, Mail, MapPin } from "lucide-react";
 import ProjectCard from "@/app/project-card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-function GridImage({
-  className,
-  src,
-  alt,
-}: {
-  className?: string;
-  src: string;
-  alt: string;
-}) {
+function LocationPin() {
   return (
-    <div
-      className={cn(
-        "relative min-h-40 w-full overflow-hidden rounded-md",
-        className,
-      )}
-    >
-      <Image className="h-full w-full object-cover" src={src} alt={alt} fill />
+    <div className="flex w-full justify-center gap-4">
+      <MapPin />
+      <span className="text-[18px] font-medium">Venice, Italy</span>
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center">
-      <div className={"mt-36 w-full max-w-[520px] px-6 md:max-w-[620px]"}>
-        <h1 className="text-2xl font-medium">
-          hey, I&apos;m christian stamati 👋
-        </h1>
-        <p className={`py-8 leading-relaxed`}>
-          I&apos;m a developer from Italy, deeply passionate about crafting
-          digital products. I currently work as a unity / unreal / front-end
-          developer at WeWear, where I help build services to manage digital
-          twins and improve online shopping experience.
+    <main className="flex flex-col items-center">
+      <section className="my-36 max-w-xl px-6 text-center">
+        <LocationPin></LocationPin>
+        <h1 className="my-8 text-6xl font-bold">Hi, I’m Christian.</h1>
+        <p>
+          On a mission to build products people love, I turn ideas into digital
+          products & websites. Here&apos;s a summary of my work so far.
         </p>
-        <div className="mt-8 grid grid-cols-4 gap-2">
-          <GridImage
-            className={"col-span-2"}
-            src={"/static/images/beer.jpg"}
-            alt={"beer"}
-          />
-          <GridImage src={"/static/images/boy.jpg"} alt={"drone"} />
-          <GridImage
-            className="row-span-2"
-            src={"/static/images/vp.jpg"}
-            alt={"drone"}
-          />
-          <GridImage
-            className={"row-span-2 "}
-            src={"/static/images/ftracking.png"}
-            alt={"beer"}
-          />
-          <GridImage
-            className={"row-span-2 "}
-            src={"/static/images/jonny.png"}
-            alt={"beer"}
-          />
-          <GridImage
-            className={"row-span-2 "}
-            src={"/static/images/gym.png"}
-            alt={"beer"}
-          />
-          <GridImage
-            className={"row-span-2 "}
-            src={"/static/images/tracking.png?v=1"}
-            alt={"beer"}
-          />
-          <GridImage
-            className={"row-span-2 "}
-            src={"/static/images/venice.jpg"}
-            alt={"beer"}
-          />
-          <GridImage
-            className={"col-span-2 "}
-            src={"/static/images/cinema.jpg"}
-            alt={"beer"}
-          />
-          <GridImage
-            className={"col-span-2"}
-            src={"/static/images/fioi.jpg"}
-            alt={"beer"}
-          />
-          <GridImage src={"/static/images/me.jpg?v=1"} alt={"beer"} />{" "}
+        <div className="mt-6 flex justify-center gap-x-4">
+          <Link href={"/contact"}>
+            <Button size={"lg"}>
+              <Mail size={21} className={"mr-2"} />
+              <span>Contact Me</span>
+            </Button>
+          </Link>
+          <Link target={"_blank"} href="https://github.com/christianstamati">
+            <Button size={"lg"} variant="secondary">
+              <Github size={21} className={"mr-2"} />
+              <span>GitHub</span>
+            </Button>
+          </Link>
         </div>
-        <p className="py-16 leading-relaxed">
-          On a mission to build digital products users love, and along the way,
-          learning and growing as a developer. Here&apos;s a summary of my work
-          so far.
-        </p>
-
-        <div className="flex flex-col gap-y-4 py-16">
+      </section>
+      <section className="flex w-full items-center justify-center px-4 sm:px-8 md:px-16">
+        <div className="ml:w-fit mb-36 flex w-full flex-col gap-y-20">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

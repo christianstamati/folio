@@ -5,10 +5,11 @@ import { GeistMono } from "geist/font/mono";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header, { Nav } from "@/app/header";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Christian Stamati",
-  description: "Building digital products",
+  description: "On a mission to build products people love",
   icons: [{ rel: "icon", url: "/favicon.png" }],
 };
 
@@ -17,6 +18,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = headers();
+  const pathname = headersList.get("x-pathname");
+  const isDev = pathname?.includes("dev");
+  if (isDev) {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
@@ -29,8 +52,13 @@ export default function RootLayout({
           <Header />
           {children}
           <div className={`glass fixed bottom-0 left-0 right-0 z-50 sm:hidden`}>
-            <Nav className="grid w-full grid-cols-5" />
+            <Nav className="flex justify-center" />
           </div>
+          <footer className="hidden h-56 flex-col items-center justify-center gap-y-4 bg-secondary sm:flex">
+            <span className="text-paragraph">
+              Copyright © 2024 Christian Stamati. All rights reserved.
+            </span>
+          </footer>
         </ThemeProvider>
       </body>
     </html>
