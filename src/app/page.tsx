@@ -2,6 +2,7 @@ import { Github, Mail, MapPin } from "lucide-react";
 import ProjectCard from "@/app/project-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import PlaceholderImage from "@/components/placeholder-image";
 
 function LocationPin() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex w-full items-center justify-center px-4 sm:px-8 md:px-16">
-        <div className="ml:w-fit mb-36 flex w-full flex-col gap-y-20">
+        <div className="mb-36 flex w-full flex-col gap-y-20 ml:w-fit">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />

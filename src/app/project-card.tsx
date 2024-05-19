@@ -8,10 +8,10 @@ import Image from "next/image";
 function ProjectCard() {
   return (
     <Link
-      href={"/"}
-      className="ml:w-[900px] ml:flex-row flex w-full flex-col overflow-hidden rounded-3xl bg-secondary transition-all duration-300 hover:scale-105 hover:bg-secondary/70 hover:shadow-2xl"
+      href={"/project"}
+      className="flex w-full flex-col overflow-hidden rounded-3xl bg-secondary transition-all duration-300 hover:scale-105 hover:bg-secondary/70 hover:shadow-2xl ml:w-[900px] ml:flex-row"
     >
-      <div className="ml:py-16 ml:pl-16 flex flex-[0.7] flex-col justify-center py-8 pl-8">
+      <div className="flex flex-[0.7] flex-col justify-center py-8 pl-8 ml:py-16 ml:pl-16">
         <Image
           className="h-6 w-6 sm:h-8 sm:w-8"
           src={"/static/images/suggested-jobs/logo.png"}
