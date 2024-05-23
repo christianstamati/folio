@@ -1,9 +1,52 @@
-import ProjectCard from "@/app/project-card";
 import Image from "next/image";
 import React from "react";
 import PlaceholderImage from "@/components/placeholder-image";
+import ProjectInfo from "@/components/project-info";
 
-export default function ProjectInfoDev() {
+// Project Cover
+// Project info [icon, Title, Company, Description]
+// Callout
+// TextParagraph
+// Small Caps Header
+// Caption
+// ProblemWithNumber
+// VideoPlayer
+// FeatureParagraph
+
+export default function ProjectPage() {
+  return (
+    <div className="flex items-center justify-center">
+      <div className="w-full px-6 sm:max-w-xl md:max-w-3xl lg:max-w-5xl">
+        <ProjectInfo
+          info={{
+            icon: {
+              src: "/static/images/suggested-jobs/logo.png",
+              alt: "cool-project-alt",
+            },
+            title: "The Job Card",
+            company: "Zip Recruiter",
+            year: "2020",
+            shortDescription:
+              "For job seekers, the job card is a key element in the ZipRecruiter\n" +
+              "          interface, but functionally, it presented several issues; it was\n" +
+              "          difficult to read, reuse, and test. I led the effort to improve the\n" +
+              "          job card from usability and system perspectives.",
+            role: "Lead Production Designer",
+            responsibilities: ["System Design", "User Interface Design"],
+            team: [
+              "Nishok Chetty, Product Manager",
+              "Gerald Burns, Engineer",
+              "Ben Geller, Research",
+              "Mrinalini Garg, Analytics",
+            ],
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function ProjectInfoDevBKP() {
   return (
     <div className="flex flex-col bg-neutral-50 p-6">
       <div>
@@ -216,14 +259,45 @@ export default function ProjectInfoDev() {
 
         <div className="my-16">
           <h2 className="mb-3 text-sm font-bold tracking-widest text-primary/90">
-            PROBLEM
+            RESEARCH
           </h2>
           <p>
-            The job card had glaring usability issues and needed to be rebuilt
-            for each new placement, an inefficiency we hoped to correct. Could
-            we redesign the job card to not only improve usability, but also
-            promote consistency and enable powerful testing?
+            Several of the issues stated above were based on my intuition and
+            understanding of best practices, but others came directly from our
+            research. Job seekers who reported jobs cited a lack of information
+            as a top reason.
           </p>
+          <div className="h-8"></div>
+          <p>
+            After digging in with user interviews, Ben, our research lead,
+            learned that job seekers were frustrated by cut off job titles and
+            locations. They loved our 1-Tap Apply feature, but felt some jobs
+            didnt have enough substance for them to confidently use it. This was
+            especially true for job seekers in trucking and healthcare, as
+            hiring managers in those industries tended to stuff job titles with
+            keywords.
+          </p>
+          <div className="h-8"></div>
+          <div className="rounded-2xl bg-white px-6 py-4">
+            <h2 className="mb-3 text-sm font-bold tracking-widest text-primary/90">
+              OUR VISION
+            </h2>
+            <p>
+              We aimed to improve the job cards usability upfront and systemize
+              the design for added testing capabilities. We also hoped to use
+              the project as a starting point for improving our process of
+              implementing reusable components across our product ecosystem.
+            </p>
+          </div>
+        </div>
+
+        <div className="py-12">
+          <PlaceholderImage
+            width={300}
+            height={300}
+            className="w-full"
+            alt={"Caption"}
+          />
         </div>
       </div>
     </div>

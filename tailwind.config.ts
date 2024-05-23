@@ -11,6 +11,9 @@ const config = {
   prefix: "",
   theme: {
     screens: {
+      xs: "480px",
+      // => @media (min-width: 480px) { ... }
+
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 
@@ -77,6 +80,7 @@ const config = {
         },
         paragraph: {
           DEFAULT: "hsl(var(--paragraph))",
+          dark: "#323235",
         },
       },
       borderRadius: {
