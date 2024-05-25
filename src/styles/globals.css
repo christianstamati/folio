@@ -77,7 +77,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#f6f6f6] text-foreground;
   }
 
   .glass{
@@ -85,6 +85,6 @@
   }
 
   p{
-    @apply text-paragraph leading-relaxed;
+    @apply text-paragraph leading-relaxed text-base sm:text-lg;
   }
 }

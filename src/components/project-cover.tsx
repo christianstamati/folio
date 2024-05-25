@@ -1,17 +1,13 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import { ImageSource } from "@/types";
 
 function ProjectCover({
   img,
   className,
 }: {
-  img: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  img: ImageSource;
   className?: string;
 }) {
   return (
