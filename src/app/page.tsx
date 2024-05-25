@@ -2,7 +2,6 @@ import { Github, Mail, MapPin } from "lucide-react";
 import ProjectCard from "@/app/project-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import PlaceholderImage from "@/components/placeholder-image";
 
 function LocationPin() {
   return (
