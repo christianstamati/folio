@@ -39,7 +39,7 @@ function ProjectInfo({ info }: { info: ProjectInfoData }) {
         height={32}
       ></Image>
       {/* Project Title */}
-      <h1 className="mb-4 mt-4 text-4xl font-bold">{info.title}</h1>
+      <h1 className="mb-4 mt-4 text-5xl font-bold">{info.title}</h1>
       {/* Company and year */}
       <div className="flex items-center gap-x-3 text-lg font-medium text-paragraph">
         <span>{info.company}</span>
@@ -49,11 +49,11 @@ function ProjectInfo({ info }: { info: ProjectInfoData }) {
       {/* Project INFO */}
       <div className={"mt-6 flex flex-col gap-12 lg:flex-row"}>
         {/* Project description */}
-        <div className="text-paragraph-dark w-full text-base sm:text-lg lg:w-3/4">
+        <div className="w-full text-base text-paragraph-dark sm:text-lg lg:w-3/4">
           {info.shortDescription}
         </div>
         {/* Role and Team */}
-        <div className={"xs:flex-row flex w-full flex-col gap-8"}>
+        <div className={"flex w-full flex-col gap-8 xs:flex-row"}>
           <div className="flex w-full flex-col gap-8">
             {/* Role */}
             <ListItems header={"ROLE"} items={[info.role]} />

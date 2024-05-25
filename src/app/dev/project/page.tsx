@@ -2,9 +2,8 @@ import Image from "next/image";
 import React from "react";
 import PlaceholderImage from "@/components/placeholder-image";
 import ProjectInfo from "@/components/project-info";
+import ProjectCover from "@/components/project-cover";
 
-// Project Cover
-// Project info [icon, Title, Company, Description]
 // Callout
 // TextParagraph
 // Small Caps Header
@@ -15,12 +14,20 @@ import ProjectInfo from "@/components/project-info";
 
 export default function ProjectPage() {
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-full px-6 sm:max-w-xl md:max-w-3xl lg:max-w-5xl">
+    <div className="flex flex-col items-center justify-center">
+      <ProjectCover
+        img={{
+          src: "/static/the-card-job/project-hero.png",
+          alt: "project-hero",
+          width: 1920,
+          height: 1080,
+        }}
+      />
+      <div className="-mt-44 w-full px-6 sm:max-w-xl md:max-w-3xl lg:max-w-5xl">
         <ProjectInfo
           info={{
             icon: {
-              src: "/static/images/suggested-jobs/logo.png",
+              src: "/static/the-card-job/project-icon.png",
               alt: "cool-project-alt",
             },
             title: "The Job Card",
@@ -41,6 +48,7 @@ export default function ProjectPage() {
             ],
           }}
         />
+        <div className="h-svh">OTHER STUFF</div>
       </div>
     </div>
   );
@@ -52,7 +60,7 @@ function ProjectInfoDevBKP() {
       <div>
         <Image
           className="h-6 w-6 sm:h-8 sm:w-8"
-          src={"/static/images/suggested-jobs/logo.png"}
+          src={"/static/images/suggested-jobs/project-icon.png"}
           alt={"project-icon"}
           width={32}
           height={32}

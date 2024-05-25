@@ -3,9 +3,9 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
 import "../styles/globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import Header, { Nav } from "@/app/header";
 import { headers } from "next/headers";
+import { ThemeProvider } from "@/app/theme-provider";
 
 export const metadata: Metadata = {
   title: "Christian Stamati",

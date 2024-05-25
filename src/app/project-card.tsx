@@ -12,7 +12,7 @@ function ProjectCard() {
       <div className="flex flex-[0.7] flex-col justify-center py-8 pl-8 ml:py-16 ml:pl-16">
         <Image
           className="h-6 w-6 sm:h-8 sm:w-8"
-          src={"/static/images/suggested-jobs/logo.png"}
+          src={"/static/images/suggested-jobs/project-icon.png"}
           alt={"project-icon"}
           width={32}
           height={32}
@@ -36,7 +36,7 @@ function ProjectCard() {
       <div className="flex flex-1 items-end justify-end">
         <Image
           className="h-full w-full max-w-2xl object-cover"
-          src={"/static/images/suggested-jobs/card-cover.png"}
+          src={"/static/images/suggested-jobs/project-card-cover.png"}
           alt={"project-icon"}
           width={200}
           height={100}

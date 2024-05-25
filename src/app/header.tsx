@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, cloneElement, ReactElement } from "react";
 import Link from "next/link";
-import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeSwitch } from "@/components/theme-switch";
 import { Home, User, Folder, Message, Category } from "react-iconly";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -100,7 +100,7 @@ function Header() {
         </div>
         <div className="flex items-center justify-end">
           <div className="mr-4">
-            <ModeToggle />
+            <ThemeSwitch />
           </div>
         </div>
       </header>
