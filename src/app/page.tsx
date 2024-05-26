@@ -19,8 +19,8 @@ export default function Home() {
         <LocationPin></LocationPin>
         <h1 className="my-8 text-6xl font-bold">Hi, I’m Christian.</h1>
         <p>
-          On a mission to build products people love, I turn ideas into digital
-          products & websites. Here&apos;s a summary of my work so far.
+          On a mission to build products people love, <br /> I turn ideas into
+          digital products.
         </p>
         <div className="mt-6 flex justify-center gap-x-4">
           <Link href={"/contact"}>

@@ -14,7 +14,7 @@ import FullScreenImage from "@/components/full-screen-image";
 
 export default function Project() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="mt-12 flex flex-col items-center justify-center">
       <ProjectCover
         img={{
           src: "/static/the-card-job/project-hero.png",
@@ -338,6 +338,7 @@ export default function Project() {
         />
         <VerticalSpace />
       </ContentBlock>
+      <VerticalSpace size={"xl"}></VerticalSpace>
     </div>
   );
 }

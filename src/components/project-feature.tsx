@@ -18,7 +18,7 @@ function ProjectFeature({
 }) {
   return (
     <div
-      className={`flex items-center gap-x-8 ${reverse ? "flex-row-reverse" : ""}`}
+      className={`flex flex-col-reverse items-center gap-8 ${reverse ? "md:flex-row-reverse" : "md:flex-row"}`}
     >
       <TitleParagraph title={title} content={content} />
       <div className="h-full w-full">
