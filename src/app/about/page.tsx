@@ -4,6 +4,10 @@ import OverlineText from "@/components/overline-text";
 import Experience from "@/components/experience";
 import { ExperienceData } from "@/types";
 import VerticalSpace from "@/components/vertical-space";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Download, Mail } from "lucide-react";
 
 const aboutPage = {
   experiences: [
@@ -132,7 +136,28 @@ function ExperienceSet({
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <ContentBlock className="my-36 sm:m-0 sm:mt-36">
+      <div className="flex  items-center justify-center py-32">
+        <div className="flex flex-col items-center gap-8 text-center">
+          <Image
+            className={"rounded-full shadow-xl"}
+            src={"/static/images/me.png"}
+            alt={"me"}
+            width={128}
+            height={128}
+          />
+          <OverlineText>CHRISTIAN STAMATI</OverlineText>
+          <h1 className="max-w-2xl text-4xl font-bold">
+            Building digital experiences with unity, unreal and react.
+          </h1>
+          <Link href={"/contact"}>
+            <Button size={"lg"}>
+              <Download size={21} className={"mr-2"} />
+              <span>Download CV</span>
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <ContentBlock>
         <ExperienceSet items={aboutPage.experiences} header={"EXPERIENCE"} />
         <VerticalSpace size={"xl"}></VerticalSpace>
         <ExperienceSet items={aboutPage.education} header={"EDUCATION"} />
