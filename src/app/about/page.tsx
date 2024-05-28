@@ -142,19 +142,28 @@ export default function About() {
             className={"rounded-full shadow-xl"}
             src={"/static/images/me.png"}
             alt={"me"}
-            width={128}
-            height={128}
+            width={100}
+            height={100}
           />
           <OverlineText>CHRISTIAN STAMATI</OverlineText>
           <h1 className="max-w-2xl text-4xl font-bold">
             Building digital experiences with unity, unreal and react.
           </h1>
-          <Link href={"/contact"}>
-            <Button size={"lg"}>
-              <Download size={21} className={"mr-2"} />
-              <span>Download CV</span>
-            </Button>
-          </Link>
+          <div className="flex gap-4">
+            <Link href={"/contact"}>
+              <Button size={"lg"}>
+                <Mail size={21} className={"mr-2"} />
+                <span>Contact me</span>
+              </Button>
+            </Link>
+
+            <Link href={"/contact"}>
+              <Button variant="secondary" size={"lg"}>
+                <Download size={21} className={"mr-2"} />
+                <span>Download CV</span>
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
       <ContentBlock>
@@ -174,6 +183,7 @@ export default function About() {
           </div>
         </div>
       </ContentBlock>
+      <VerticalSpace size={"xl"}></VerticalSpace>
     </div>
   );
 }
