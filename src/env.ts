@@ -9,8 +9,8 @@ dotenv.config({
 // docs: https://env.t3.gg/docs/nextjs#use-your-schema
 export const env = createEnv({
   server: {
-    DATABASE_URL: z.string().url(),
-    DATABASE_AUTH_TOKEN: z.string(),
+    /*DATABASE_URL: z.string().url(),
+    DATABASE_AUTH_TOKEN: z.string(),*/
   },
 
   // For Next.js >= 13.4.4, you only need to destructure client variables:
