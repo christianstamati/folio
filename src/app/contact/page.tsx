@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import VerticalSpace from "@/components/vertical-space";
-import { Calendar, Copy, Download, Linkedin } from "lucide-react";
+import { Copy, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 export default function Contact() {
   return (
@@ -19,17 +20,15 @@ export default function Contact() {
         <VerticalSpace />
         <div className="flex flex-row gap-4">
           <Button variant="secondary" size={"sm"}>
-            <Calendar size={21} className={"mr-2"} />
-            <span>Book a call</span>
-          </Button>
-          <Button variant="secondary" size={"sm"}>
             <Copy size={21} className={"mr-2"} />
             <span>Copy email</span>
           </Button>
-          <Button variant="secondary" size={"sm"}>
-            <Linkedin size={21} className={"mr-2"} />
-            <span>DM me</span>
-          </Button>
+          <Link href={""}>
+            <Button variant="secondary" size={"sm"}>
+              <Linkedin size={21} className={"mr-2"} />
+              <span>Linkedin</span>
+            </Button>
+          </Link>
         </div>
         <div className="flex w-full items-center gap-4 py-6">
           <div className="w-full border-t-[0.1rem]"></div>
