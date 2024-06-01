@@ -1,5 +1,5 @@
 import { Github, Mail, MapPin } from "lucide-react";
-import ProjectCard from "@/app/project-card";
+import ProjectCard from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

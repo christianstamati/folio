@@ -6,6 +6,9 @@ import "../styles/globals.css";
 import Header, { Nav } from "@/app/header";
 import { headers } from "next/headers";
 import { ThemeProvider } from "@/app/theme-provider";
+import { SocialIcon } from "react-social-icons";
+import React from "react";
+import Footer from "@/app/footer";
 
 export const metadata: Metadata = {
   title: "Christian Stamati",
@@ -54,11 +57,7 @@ export default function RootLayout({
           <div className={`glass fixed bottom-0 left-0 right-0 z-50 sm:hidden`}>
             <Nav className="flex justify-center" />
           </div>
-          <footer className="hidden h-56 flex-col items-center justify-center gap-y-4 bg-secondary sm:flex">
-            <span className="text-paragraph">
-              Copyright © 2024 Christian Stamati. All rights reserved.
-            </span>
-          </footer>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

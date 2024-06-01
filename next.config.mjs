@@ -7,7 +7,9 @@ jiti("./src/env");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
+  experimental: {
+    reactCompiler: true,
+  },
   images: {
     remotePatterns: [
       {

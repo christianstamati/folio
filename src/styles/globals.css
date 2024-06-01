@@ -87,4 +87,9 @@
   p{
     @apply text-paragraph leading-relaxed text-base sm:text-lg;
   }
+
+  .social-fill .social-svg-icon {
+    fill: green!important;
+  }
 }
+
