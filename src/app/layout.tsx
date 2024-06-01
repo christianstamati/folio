@@ -1,14 +1,13 @@
+import "../styles/globals.css";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-
-import "../styles/globals.css";
 import Header, { Nav } from "@/app/header";
 import { headers } from "next/headers";
 import { ThemeProvider } from "@/app/theme-provider";
-import { SocialIcon } from "react-social-icons";
 import React from "react";
 import Footer from "@/app/footer";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Christian Stamati",
@@ -58,6 +57,7 @@ export default function RootLayout({
             <Nav className="flex justify-center" />
           </div>
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

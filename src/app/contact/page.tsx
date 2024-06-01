@@ -7,6 +7,7 @@ import VerticalSpace from "@/components/vertical-space";
 import { Copy, Linkedin } from "lucide-react";
 import Link from "next/link";
 import sendMessage from "@/app/contact/_actions/send-message.action";
+import CopyEmailButton from "@/app/contact/copy-email-button";
 
 export default function Contact() {
   return (
@@ -20,10 +21,7 @@ export default function Contact() {
         </h1>
         <VerticalSpace />
         <div className="flex flex-row gap-4">
-          <Button variant="secondary" size={"sm"}>
-            <Copy size={21} className={"mr-2"} />
-            <span>Copy email</span>
-          </Button>
+          <CopyEmailButton />
           <Link href={""}>
             <Button variant="secondary" size={"sm"}>
               <Linkedin size={21} className={"mr-2"} />
@@ -40,7 +38,6 @@ export default function Contact() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <Input
               required
-              lang={"es-ES"}
               className="h-12 rounded-xl"
               name={"name"}
               placeholder="Your name"
