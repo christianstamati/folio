@@ -15,14 +15,18 @@ const transporter = nodemailer.createTransport({
   SES: { ses, aws },
 });
 
-export async function sendEmail(from: string, name: string, message: string) {
+export async function sendEmail(
+  from: string,
+  name: string,
+  content: string,
+): Promise<boolean> {
   const reply = `mailto:${from}`;
   const subject = name
     ? `New Portfolio Message from  ${name}`
     : "New Portfolio Message";
 
   try {
-    await new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       transporter.sendMail(
         {
           from: "hello@christianstamati.com",
@@ -45,7 +49,7 @@ export async function sendEmail(from: string, name: string, message: string) {
                 <h3>Name: ${name}</h3>
                 <h3>Email: ${from}</h3>
                 <h3>Message:</h3>
-                <p>${message}</p>
+                <p>${content}</p>
                 <a href="${reply}">Reply</a>
               </main>
             </body>
@@ -55,14 +59,15 @@ export async function sendEmail(from: string, name: string, message: string) {
         (err, info) => {
           if (err) {
             console.error("Failed to send mail: ", err);
-            reject(err);
+            reject(false);
           } else {
-            resolve(info);
+            resolve(true);
           }
         },
       );
     });
   } catch (error) {
     console.error("Error in sending email: ", error);
+    return false;
   }
 }
