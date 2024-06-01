@@ -1,5 +1,6 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import dotenv from "dotenv";
+import { z } from "zod";
 
 dotenv.config({
   path: ".env.local",
@@ -7,7 +8,10 @@ dotenv.config({
 
 // docs: https://env.t3.gg/docs/nextjs#use-your-schema
 export const env = createEnv({
-  server: {},
+  server: {
+    AWS_SES_ACCESS_KEY: z.string(),
+    AWS_SES_SECRET: z.string(),
+  },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
   client: {},
   experimental__runtimeEnv: {},

@@ -15,6 +15,7 @@
     "turso": "turso dev --db-file dev.db"
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.588.0",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
@@ -28,15 +29,17 @@
     "lucide-react": "^0.372.0",
     "next": "^15.0.0-rc.0",
     "next-themes": "^0.3.0",
+    "nodemailer": "^6.9.13",
     "react": "^19.0.0-rc-38e3b23483-20240529",
     "react-dom": "^19.0.0-rc-38e3b23483-20240529",
     "react-iconly": "^2.2.10",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.5"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",

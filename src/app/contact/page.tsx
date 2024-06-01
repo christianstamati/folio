@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import VerticalSpace from "@/components/vertical-space";
 import { Copy, Linkedin } from "lucide-react";
 import Link from "next/link";
+import sendMessage from "@/app/contact/_actions/send-message.action";
 
 export default function Contact() {
   return (
@@ -35,20 +36,24 @@ export default function Contact() {
           <p>or</p>
           <div className="w-full border-t-[0.1rem]"></div>
         </div>
-        <form className="flex w-full flex-col gap-4">
+        <form action={sendMessage} className="flex w-full flex-col gap-4">
           <div className="flex flex-col gap-4 sm:flex-row">
             <Input
+              required
+              lang={"es-ES"}
               className="h-12 rounded-xl"
               name={"name"}
               placeholder="Your name"
             />
             <Input
+              required
               className="h-12 rounded-xl"
               name={"email"}
               placeholder="Your email"
             />
           </div>
           <Textarea
+            required
             className="h-[250px] rounded-xl py-3"
             name={"message"}
             placeholder="Your message"
