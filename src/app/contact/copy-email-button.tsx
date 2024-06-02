@@ -6,11 +6,14 @@ import { useToast } from "@/components/ui/use-toast";
 
 function CopyEmailButton() {
   const { toast } = useToast();
-
   return (
     <Button
-      onClick={() => {
-        navigator.clipboard.writeText("christian.stamati@gmail.com");
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText("christian.stamati@gmail.com");
+        } catch (e) {
+          console.error(e);
+        }
         toast({
           title: "Copy email",
           description: "Email copied to the clipboard!",

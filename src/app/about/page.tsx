@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Download, Mail } from "lucide-react";
+import DownloadCvButton from "@/app/about/download-cv-button";
 
 const aboutPage = {
   experiences: [
@@ -136,35 +137,30 @@ function ExperienceSet({
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="my-24 flex items-center justify-center sm:my-36">
-        <div className="flex flex-col items-center gap-8 text-center">
-          <Image
-            className={"rounded-full shadow-xl"}
-            src={"/static/images/me.png"}
-            alt={"me"}
-            width={100}
-            height={100}
-          />
-          <OverlineText>CHRISTIAN STAMATI</OverlineText>
-          <h1 className="max-w-2xl text-4xl font-bold">
-            Building digital experiences with unity, unreal and react.
-          </h1>
-          <div className="flex gap-4">
-            <Link href={"/contact"}>
-              <Button size={"lg"}>
-                <Mail size={21} className={"mr-2"} />
-                <span>Contact me</span>
-              </Button>
-            </Link>
-
-            <Link href={"/contact"}>
-              <Button variant="secondary" size={"lg"}>
-                <Download size={21} className={"mr-2"} />
-                <span>Download CV</span>
-              </Button>
-            </Link>
-          </div>
+      <div className="flex h-svh flex-col items-center justify-center px-6 text-center sm:gap-8">
+        <Image
+          className={"rounded-full shadow-xl"}
+          src={"/static/images/me.png"}
+          alt={"me"}
+          width={128}
+          height={128}
+        />
+        <OverlineText className="mb-3 mt-8 font-medium">
+          CHRISTIAN STAMATI
+        </OverlineText>
+        <h1 className="max-w-2xl pb-8 text-3xl font-bold sm:text-4xl">
+          Building digital experiences with unity, unreal and react.
+        </h1>
+        <div className="flex w-full flex-col gap-4 sm:flex-row">
+          <Link href={"/contact"}>
+            <Button className="w-full" size={"lg"}>
+              <Mail size={21} className={"mr-2"} />
+              <span>Contact me</span>
+            </Button>
+          </Link>
+          <DownloadCvButton />
         </div>
+        <VerticalSpace></VerticalSpace>
       </div>
       <ContentBlock>
         <ExperienceSet items={aboutPage.experiences} header={"EXPERIENCE"} />

@@ -101,7 +101,7 @@ export function ContactForm() {
             <FormItem className="w-full">
               <FormLabel>Your message</FormLabel>
               <FormControl>
-                <Textarea {...field} />
+                <Textarea className="h-40" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

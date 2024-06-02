@@ -1,6 +1,7 @@
 import { Button, ButtonProps } from "@/components/ui/button";
-import { MoonLoader } from "react-spinners";
+import { PulseLoader } from "react-spinners";
 import React from "react";
+import { useTheme } from "next-themes";
 
 interface LoadingButtonProps extends ButtonProps {
   loading: boolean;
@@ -8,11 +9,15 @@ interface LoadingButtonProps extends ButtonProps {
 }
 
 function LoadingButton({ loading, loadingText, ...rest }: LoadingButtonProps) {
+  const { theme } = useTheme();
   return (
     <Button disabled={loading} {...rest}>
       {loading ? (
-        <div className="flex gap-x-2">
-          <MoonLoader size={14} color="#ffffff" />
+        <div className="flex items-center gap-x-2">
+          <PulseLoader
+            size={10}
+            color={`${theme === "light" ? "#ffffff" : "#000000"}`}
+          />
           <span>{loadingText ?? "Loading..."}</span>
         </div>
       ) : (

@@ -17,7 +17,9 @@ export default function Home() {
     <main className="flex flex-col items-center bg-background">
       <section className="my-24 max-w-xl px-6 text-center sm:my-36">
         <LocationPin></LocationPin>
-        <h1 className="my-8 text-6xl font-bold">Hi, I’m Christian.</h1>
+        <h1 className="my-8 text-6xl font-bold leading-snug">
+          Hi, I’m Christian.
+        </h1>
         <p>
           On a mission to build products people love, <br /> I turn ideas into
           digital products.
