@@ -5,7 +5,7 @@ import VerticalSpace from "@/components/vertical-space";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
 import CopyEmailButton from "@/app/contact/copy-email-button";
-import ContactForm from "@/app/contact/contact-form";
+import { ContactForm } from "@/app/contact/contact-form";
 
 export default function Contact() {
   return (

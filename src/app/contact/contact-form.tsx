@@ -1,95 +1,122 @@
 "use client";
-import React, { useEffect } from "react";
-import sendMessageAction from "@/app/contact/_actions/send-message.action";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { useFormState, useFormStatus } from "react-dom";
-import { clsx } from "clsx";
-import { SyncLoader } from "react-spinners";
 import { toast } from "@/components/ui/use-toast";
+import { Textarea } from "@/components/ui/textarea";
+import LoadingButton from "@/components/loading-button";
+import { sendMessageAction } from "@/app/contact/_actions/send-message.action";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button disabled={pending} className={"rounded-xl p-7"} type={"submit"}>
-      {pending ? <SyncLoader size={8} color="#ffffff" /> : "Send"}
-    </Button>
-  );
-}
+const FormSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email(),
+  message: z
+    .string()
+    .min(5, { message: "Message must be at least 5 characters." }),
+});
 
-function ContactForm() {
-  const [formState, formAction] = useFormState(sendMessageAction, {
-    message: "",
-    errors: undefined,
-    fields: {
+export function ContactForm() {
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
       name: "",
       email: "",
-      content: "",
+      message: "",
     },
   });
 
-  useEffect(() => {
-    if (formState.message === "success") {
-      toast({
-        title: "Success!",
-        description: "The message was successfully sent.",
-      });
-    } else if (formState.message === "send-error") {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    const [result, err] = await sendMessageAction({
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    });
+
+    if (!result?.successful || err) {
       toast({
         variant: "destructive",
-        title: "Failed to send!",
-        description: "Ops, something went wrong!",
+        title: "Failed to submit",
+        description: "Something went wrong. Failed to send message.",
       });
+
+      console.error(err);
+      return;
     }
-  }, [formState]);
+
+    toast({
+      title: "Success!",
+      description: "Your message has been sent.",
+    });
+
+    form.reset();
+  }
 
   return (
-    <form action={formAction} className="flex w-full flex-col gap-4">
-      <div className="flex flex-col gap-4 sm:flex-row">
-        <div className="w-full">
-          <Input
-            defaultValue={formState.fields.name}
-            className={clsx("h-12 rounded-xl", {
-              "border-red-400": formState.errors?.name,
-            })}
-            name={"name"}
-            placeholder="Your name"
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+        <div className="flex w-full flex-col gap-4 sm:flex-row">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Your name</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
-          <span className="text-left text-sm text-red-400">
-            {formState.errors?.name}
-          </span>
-        </div>
-        <div className="w-full">
-          <Input
-            defaultValue={formState.fields.email}
-            className={clsx("h-12 rounded-xl", {
-              "border-red-400": formState.errors?.email,
-            })}
-            name={"email"}
-            placeholder="Your email"
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Your email</FormLabel>
+                <FormControl>
+                  <Input type={"email"} {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
-          <span className="text-left text-sm text-red-400">
-            {formState.errors?.email}
-          </span>
         </div>
-      </div>
-      <div>
-        <Textarea
-          defaultValue={formState.fields.content}
-          className={clsx("h-[250px] rounded-xl py-3", {
-            "border-red-400": formState.errors?.content,
-          })}
-          name={"content"}
-          placeholder="Your message"
+
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem className="w-full">
+              <FormLabel>Your message</FormLabel>
+              <FormControl>
+                <Textarea {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-        <span className="text-left text-sm text-red-400">
-          {formState.errors?.content}
-        </span>
-      </div>
-      <SubmitButton />
-    </form>
+        <LoadingButton
+          className={"w-full"}
+          size="lg"
+          type="submit"
+          loading={form.formState.isSubmitting}
+          loadingText="Sending..."
+        >
+          Send
+        </LoadingButton>
+      </form>
+    </Form>
   );
 }
-
-export default ContactForm;
