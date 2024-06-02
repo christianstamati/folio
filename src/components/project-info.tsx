@@ -49,7 +49,7 @@ function ProjectInfo({ info }: { info: ProjectInfoData }) {
       {/* Project INFO */}
       <div className={"mt-6 flex flex-col gap-12 lg:flex-row"}>
         {/* Project description */}
-        <div className="w-full text-base text-paragraph-dark sm:text-lg lg:w-3/4">
+        <div className="w-full text-base text-primary/70 sm:text-lg lg:w-3/4">
           {info.shortDescription}
         </div>
         {/* Role and Team */}
