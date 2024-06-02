@@ -12,7 +12,7 @@ export default function Contact() {
     <div className="flex flex-col items-center justify-center">
       <ContentBlock
         variant="2xl"
-        className="flex h-svh flex-col items-center justify-center"
+        className="my-28 flex flex-col items-center justify-center"
       >
         <h1 className="max-w-2xl text-4xl font-bold">
           Let&apos;s get in touch!

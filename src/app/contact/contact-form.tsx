@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useFormState, useFormStatus } from "react-dom";
 import { clsx } from "clsx";
 import { SyncLoader } from "react-spinners";
+import { toast } from "@/components/ui/use-toast";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -29,10 +30,18 @@ function ContactForm() {
   });
 
   useEffect(() => {
-    if (formState.message === "send-error") {
+    if (formState.message === "success") {
+      toast({
+        title: "Success!",
+        description: "The message was successfully sent.",
+      });
+    } else if (formState.message === "send-error") {
+      toast({
+        variant: "destructive",
+        title: "Failed to send!",
+        description: "Ops, something went wrong!",
+      });
     }
-
-    console.log(formState);
   }, [formState]);
 
   return (
@@ -78,7 +87,6 @@ function ContactForm() {
           {formState.errors?.content}
         </span>
       </div>
-
       <SubmitButton />
     </form>
   );

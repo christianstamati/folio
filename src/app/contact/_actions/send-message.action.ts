@@ -1,5 +1,4 @@
 "use server";
-
 import { z, ZodError } from "zod";
 import { sendEmail } from "@/server/send-email";
 
@@ -7,10 +6,8 @@ const schema = z.object({
   name: z
     .string()
     .min(2, { message: "Name must contain at least 2 characters" }),
-  email: z.string().email(),
-  content: z
-    .string({ message: "Invalid content" })
-    .min(14, { message: "Content must be at least 14 characters long" }),
+  email: z.string().email({ message: "This is not a valid email address" }),
+  content: z.string({ message: "Invalid content message" }),
 });
 
 type Fields = {
@@ -54,9 +51,9 @@ async function sendMessageAction(prevState: FormState, formData: FormData) {
 
   const data = parseResult.data;
 
-  const result = await sendEmail(data.email, data.name, data.content);
+  const success = await sendEmail(data.email, data.name, data.content);
 
-  if (!result) {
+  if (!success) {
     return {
       message: "send-error",
       errors: undefined,
