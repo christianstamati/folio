@@ -136,7 +136,7 @@ function ExperienceSet({
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex  items-center justify-center py-32">
+      <div className="my-24 flex items-center justify-center sm:my-36">
         <div className="flex flex-col items-center gap-8 text-center">
           <Image
             className={"rounded-full shadow-xl"}

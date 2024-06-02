@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import Header, { Nav } from "@/app/header";
@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   title: "Christian Stamati",
   description: "On a mission to build products people love",
   icons: [{ rel: "icon", url: "/favicon.png" }],
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({

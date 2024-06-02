@@ -12,7 +12,7 @@ export default function Contact() {
     <div className="flex flex-col items-center justify-center">
       <ContentBlock
         variant="2xl"
-        className="my-28 flex flex-col items-center justify-center"
+        className="my-32 flex flex-col items-center justify-center sm:my-32"
       >
         <h1 className="max-w-2xl text-4xl font-bold">
           Let&apos;s get in touch!
@@ -30,7 +30,8 @@ export default function Contact() {
             </Button>
           </Link>
         </div>
-        <div className="flex w-full items-center gap-4 py-6">
+
+        <div className="flex w-full items-center gap-4 py-10">
           <div className="w-full border-t-[0.1rem]"></div>
           <p>or</p>
           <div className="w-full border-t-[0.1rem]"></div>

@@ -65,7 +65,7 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
-        <div className="flex w-full flex-col gap-4 sm:flex-row">
+        <div className="flex w-full flex-col gap-2 sm:flex-row">
           <FormField
             control={form.control}
             name="name"
