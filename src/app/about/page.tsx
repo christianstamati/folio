@@ -151,7 +151,7 @@ export default function About() {
         <h1 className="max-w-2xl pb-8 text-3xl font-bold sm:text-4xl">
           Building digital experiences with unity, unreal and react.
         </h1>
-        <div className="flex w-full flex-col gap-4 sm:flex-row">
+        <div className="flex w-full flex-col gap-4 sm:w-fit sm:flex-row">
           <Link href={"/contact"}>
             <Button className="w-full" size={"lg"}>
               <Mail size={21} className={"mr-2"} />
