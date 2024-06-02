@@ -137,13 +137,13 @@ function ExperienceSet({
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex h-svh flex-col items-center justify-center px-6 text-center sm:gap-8">
+      <div className="flex h-svh flex-col items-center justify-center px-6 text-center">
         <Image
           className={"rounded-full shadow-xl"}
           src={"/static/images/me.png"}
           alt={"me"}
-          width={128}
-          height={128}
+          width={150}
+          height={150}
         />
         <OverlineText className="mb-3 mt-8 font-medium">
           CHRISTIAN STAMATI
@@ -160,7 +160,6 @@ export default function About() {
           </Link>
           <DownloadCvButton />
         </div>
-        <VerticalSpace></VerticalSpace>
       </div>
       <ContentBlock>
         <ExperienceSet items={aboutPage.experiences} header={"EXPERIENCE"} />
