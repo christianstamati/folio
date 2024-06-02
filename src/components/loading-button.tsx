@@ -15,10 +15,10 @@ function LoadingButton({ loading, loadingText, ...rest }: LoadingButtonProps) {
       {loading ? (
         <div className="flex items-center gap-x-2">
           <PulseLoader
-            size={10}
+            size={8}
             color={`${theme === "light" ? "#ffffff" : "#000000"}`}
           />
-          <span>{loadingText ?? "Loading..."}</span>
+          <span>{loadingText}</span>
         </div>
       ) : (
         rest.children

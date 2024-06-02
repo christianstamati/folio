@@ -18,6 +18,7 @@ import { sendMessageAction } from "@/app/contact/_actions/send-message.action";
 import Realistic from "react-canvas-confetti/dist/presets/realistic";
 import { useRef } from "react";
 import { TConductorInstance } from "react-canvas-confetti/src/types";
+import VerticalSpace from "@/components/vertical-space";
 
 const FormSchema = z.object({
   name: z.string().min(2, {
@@ -71,7 +72,10 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="mb-6 w-full space-y-3"
+      >
         <div className="flex w-full flex-col gap-2 sm:flex-row">
           <FormField
             control={form.control}
@@ -113,12 +117,12 @@ export function ContactForm() {
             </FormItem>
           )}
         />
+        <div />
         <LoadingButton
           className={"w-full"}
           size="lg"
           type="submit"
           loading={form.formState.isSubmitting}
-          loadingText="Sending..."
         >
           Send
         </LoadingButton>
