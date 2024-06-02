@@ -137,7 +137,7 @@ function ExperienceSet({
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex h-svh flex-col items-center justify-center px-6 text-center">
+      <div className="mb-36 mt-20 flex flex-col items-center justify-center px-6 text-center sm:mt-36">
         <Image
           className={"rounded-full shadow-xl"}
           src={"/static/images/me.png"}

@@ -5,8 +5,8 @@ import Link from "next/link";
 
 function LocationPin() {
   return (
-    <div className="flex w-full justify-center gap-4">
-      <MapPin />
+    <div className="flex w-full justify-center">
+      <MapPin className="mr-2" />
       <span className="text-[18px] font-medium">Venice, Italy</span>
     </div>
   );
@@ -15,7 +15,7 @@ function LocationPin() {
 export default function Home() {
   return (
     <main className="flex flex-col items-center bg-background">
-      <section className="mb-24 mt-32 max-w-xl px-6 text-center sm:my-36">
+      <section className="mb-24 mt-32 max-w-xl px-4 text-center sm:my-36">
         <LocationPin></LocationPin>
         <h1 className="my-4 text-4xl font-bold leading-snug sm:text-6xl">
           Hi, I’m Christian.
@@ -24,15 +24,15 @@ export default function Home() {
           On a mission to build products people love, <br /> I turn ideas into
           digital products.
         </p>
-        <div className="mt-6 flex justify-center gap-x-4">
+        <div className="mt-6 flex w-full flex-col justify-center gap-2 sm:flex-row">
           <Link href={"/contact"}>
-            <Button size={"lg"}>
+            <Button className="w-full" size={"lg"}>
               <Mail size={21} className={"mr-2"} />
               <span>Contact Me</span>
             </Button>
           </Link>
           <Link target={"_blank"} href="https://github.com/christianstamati">
-            <Button size={"lg"} variant="secondary">
+            <Button className="w-full" size={"lg"} variant="secondary">
               <Github size={21} className={"mr-2"} />
               <span>GitHub</span>
             </Button>
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex w-full items-center justify-center px-4 sm:px-8 md:px-16">
-        <div className="mb-36 flex w-full flex-col gap-y-20 ml:w-fit">
+        <div className="mb-28 flex w-full flex-col gap-y-20 ml:w-fit">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
