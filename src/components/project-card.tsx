@@ -7,7 +7,7 @@ function ProjectCard() {
   return (
     <Link
       href={"/project"}
-      className="flex w-full flex-col overflow-hidden rounded-3xl bg-secondary transition-all duration-300 hover:scale-105 hover:bg-secondary/70 hover:shadow-2xl ml:w-[900px] ml:flex-row"
+      className="flex w-full flex-col overflow-hidden rounded-3xl bg-secondary transition-all duration-300 hover:scale-100 hover:bg-secondary/70 sm:hover:scale-105 sm:hover:shadow-2xl ml:w-[900px] ml:flex-row"
     >
       <div className="flex flex-[0.7] flex-col justify-center py-8 pl-8 ml:py-16 ml:pl-16">
         <Image

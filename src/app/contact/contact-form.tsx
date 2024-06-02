@@ -15,6 +15,9 @@ import { toast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import LoadingButton from "@/components/loading-button";
 import { sendMessageAction } from "@/app/contact/_actions/send-message.action";
+import Realistic from "react-canvas-confetti/dist/presets/realistic";
+import { useRef } from "react";
+import { TConductorInstance } from "react-canvas-confetti/src/types";
 
 const FormSchema = z.object({
   name: z.string().min(2, {
@@ -36,6 +39,8 @@ export function ContactForm() {
     },
   });
 
+  const confettiRef = useRef<TConductorInstance | null>(null);
+
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     const [result, err] = await sendMessageAction({
       name: data.name,
@@ -53,6 +58,8 @@ export function ContactForm() {
       console.error(err);
       return;
     }
+
+    confettiRef.current?.shoot();
 
     toast({
       title: "Success!",
@@ -93,7 +100,6 @@ export function ContactForm() {
             )}
           />
         </div>
-
         <FormField
           control={form.control}
           name="message"
@@ -117,6 +123,11 @@ export function ContactForm() {
           Send
         </LoadingButton>
       </form>
+      <Realistic
+        onInit={(params) => {
+          confettiRef.current = params.conductor;
+        }}
+      />
     </Form>
   );
 }

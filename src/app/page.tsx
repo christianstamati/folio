@@ -15,9 +15,9 @@ function LocationPin() {
 export default function Home() {
   return (
     <main className="flex flex-col items-center bg-background">
-      <section className="my-24 max-w-xl px-6 text-center sm:my-36">
+      <section className="mb-24 mt-32 max-w-xl px-6 text-center sm:my-36">
         <LocationPin></LocationPin>
-        <h1 className="my-8 text-6xl font-bold leading-snug">
+        <h1 className="my-4 text-4xl font-bold leading-snug sm:text-6xl">
           Hi, I’m Christian.
         </h1>
         <p>
