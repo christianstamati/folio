@@ -19,9 +19,6 @@ import { sendMessageAction } from "@/app/contact/_actions/send-message.action";
 import Realistic from "react-canvas-confetti/dist/presets/realistic";
 import { useRef } from "react";
 import { TConductorInstance } from "react-canvas-confetti/src/types";
-import VerticalSpace from "@/components/vertical-space";
-import { retry } from "@smithy/credential-provider-imds/dist-types/remoteProvider/retry";
-import { cn } from "@/lib/utils";
 import { clsx } from "clsx";
 
 const FormSchema = z.object({
