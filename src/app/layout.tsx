@@ -10,7 +10,7 @@ import Footer from "@/app/footer";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Christian Stamati",
+  title: "Christian Stamati — Fullstack Developer",
   description: "On a mission to build products people love",
   icons: [{ rel: "icon", url: "/favicon.png" }],
 };
