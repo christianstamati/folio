@@ -1,18 +1,14 @@
 import nodemailer from "nodemailer";
-import * as aws from "@aws-sdk/client-ses";
 import { env } from "@/env";
 
-const ses = new aws.SES({
-  apiVersion: "2010-12-01",
-  region: "eu-central-1",
-  credentials: {
-    accessKeyId: env.AWS_SES_ACCESS_KEY,
-    secretAccessKey: env.AWS_SES_SECRET,
-  },
-});
-
 const transporter = nodemailer.createTransport({
-  SES: { ses, aws },
+  host: "email-smtp.eu-central-1.amazonaws.com", // Use the SMTP endpoint for your SES region
+  port: 587, // Port can be 587 or 465 for SMTP over TLS
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: env.AWS_SES_SMTP_USER, // Your SMTP username from AWS SES
+    pass: env.AWS_SES_SMTP_PASSWORD, // Your SMTP password from AWS SES
+  },
 });
 
 export async function sendEmail(

@@ -9,8 +9,8 @@ dotenv.config({
 // docs: https://env.t3.gg/docs/nextjs#use-your-schema
 export const env = createEnv({
   server: {
-    AWS_SES_ACCESS_KEY: z.string(),
-    AWS_SES_SECRET: z.string(),
+    AWS_SES_SMTP_USER: z.string(),
+    AWS_SES_SMTP_PASSWORD: z.string(),
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
   client: {},
