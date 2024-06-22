@@ -170,7 +170,7 @@ export default function About() {
           <OverlineText className="w-[30%]">SKILLS</OverlineText>
           <div className="flex w-full flex-col gap-16">
             {aboutPage.skills.map((x, index) => (
-              <div key={index} className="text-base sm:text-lg ">
+              <div key={index} className="text-base sm:text-lg">
                 <h2 className="text-lg font-bold sm:text-xl">{x.header}</h2>
                 <p className="mt-3">{x.description}</p>
               </div>

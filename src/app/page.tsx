@@ -41,9 +41,44 @@ export default function Home() {
       </section>
       <section className="flex w-full items-center justify-center px-4 sm:px-8 md:px-16">
         <div className="mb-28 flex w-full flex-col gap-y-20 ml:w-fit">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          <ProjectCard
+            data={{
+              icon: "/static/the-card-job/project-icon.png",
+              cover: "/static/the-card-job/project-card-cover.png",
+              title: "Configurator 3D",
+              category: "FULLSTACK",
+              year: "2022",
+              shortDescription:
+                "A simple tool showcasing key details that elevate a groom's suit from ordinary to exceptional.",
+              link: "/suit-configurator-3d",
+            }}
+          />
+          <ProjectCard
+            data={{
+              icon: "/static/the-card-job/project-icon.png",
+              cover: "/static/the-card-job/project-card-cover.png",
+              title: "Avatar Manager",
+              category: "UNITY",
+              year: "2020",
+              shortDescription:
+                "A digital experience to guide the groom to build an impeccable wedding suit",
+              link: "/suit-configurator-3d",
+            }}
+            disabled
+          />
+          <ProjectCard
+            data={{
+              icon: "/static/the-card-job/project-icon.png",
+              cover: "/static/the-card-job/project-card-cover.png",
+              title: "Size Suggestion",
+              category: "FULLSTACK",
+              year: "2020",
+              shortDescription:
+                "Redesigning job recommendations based on job seeker activity.",
+              link: "/suit-configurator-3d",
+            }}
+            disabled
+          />
         </div>
       </section>
     </main>
