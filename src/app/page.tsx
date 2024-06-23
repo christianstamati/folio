@@ -1,13 +1,13 @@
 import { Github, Mail } from "lucide-react";
 import {
   ProjectCard,
-  ProjectContent,
-  ProjectCover,
-  ProjectCta,
-  ProjectDescription,
-  ProjectIcon,
-  ProjectMetadata,
-  ProjectTitle,
+  ProjectCardContent,
+  ProjectCardCover,
+  ProjectCardCta,
+  ProjectCardDescription,
+  ProjectCardIcon,
+  ProjectCardMetadata,
+  ProjectCardTitle,
 } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -43,58 +43,58 @@ export default function Home() {
       <section className="flex w-full items-center justify-center px-4 sm:px-8 md:px-16">
         <div className="mb-28 flex w-full flex-col gap-y-20 ml:w-fit">
           <ProjectCard href={"/suit-configurator-3d"}>
-            <ProjectContent>
-              <ProjectIcon
+            <ProjectCardContent>
+              <ProjectCardIcon
                 src={"/static/the-card-job/project-icon.png"}
                 alt={"project-icon"}
               />
-              <ProjectTitle>Configurator 3D</ProjectTitle>
-              <ProjectMetadata category={"FULLSTACK"} year={2022} />
-              <ProjectDescription>
+              <ProjectCardTitle>Configurator 3D</ProjectCardTitle>
+              <ProjectCardMetadata category={"FULLSTACK"} year={2022} />
+              <ProjectCardDescription>
                 A simple tool showcasing key details that elevate a groom&apos;s
                 suit from ordinary to exceptional.
-              </ProjectDescription>
-              <ProjectCta>Read the Case Study</ProjectCta>
-            </ProjectContent>
-            <ProjectCover
+              </ProjectCardDescription>
+              <ProjectCardCta>Read the Case Study</ProjectCardCta>
+            </ProjectCardContent>
+            <ProjectCardCover
               src={"/static/the-card-job/project-card-cover.png"}
               alt="suggested job project cover"
             />
           </ProjectCard>
           <ProjectCard href={""} disabled>
-            <ProjectContent>
-              <ProjectIcon
+            <ProjectCardContent>
+              <ProjectCardIcon
                 src={"/static/the-card-job/project-icon.png"}
                 alt={"project-icon"}
               />
-              <ProjectTitle>My Digital Twin</ProjectTitle>
-              <ProjectMetadata category={"UNITY"} year={2022} />
-              <ProjectDescription>
+              <ProjectCardTitle>My Digital Twin</ProjectCardTitle>
+              <ProjectCardMetadata category={"UNITY"} year={2022} />
+              <ProjectCardDescription>
                 A simple tool showcasing key details that elevate a groom&apos;s
                 suit from ordinary to exceptional.
-              </ProjectDescription>
-              <ProjectCta>Read the Case Study</ProjectCta>
-            </ProjectContent>
-            <ProjectCover
+              </ProjectCardDescription>
+              <ProjectCardCta>Read the Case Study</ProjectCardCta>
+            </ProjectCardContent>
+            <ProjectCardCover
               src={"/static/the-card-job/project-card-cover.png"}
               alt="suggested job project cover"
             />
           </ProjectCard>
           <ProjectCard href={""} disabled>
-            <ProjectContent>
-              <ProjectIcon
+            <ProjectCardContent>
+              <ProjectCardIcon
                 src={"/static/the-card-job/project-icon.png"}
                 alt={"project-icon"}
               />
-              <ProjectTitle>Size Suggestion</ProjectTitle>
-              <ProjectMetadata category={"UNITY"} year={2022} />
-              <ProjectDescription>
+              <ProjectCardTitle>Size Suggestion</ProjectCardTitle>
+              <ProjectCardMetadata category={"UNITY"} year={2022} />
+              <ProjectCardDescription>
                 A simple tool showcasing key details that elevate a groom&apos;s
                 suit from ordinary to exceptional.
-              </ProjectDescription>
-              <ProjectCta>Read the Case Study</ProjectCta>
-            </ProjectContent>
-            <ProjectCover
+              </ProjectCardDescription>
+              <ProjectCardCta>Read the Case Study</ProjectCardCta>
+            </ProjectCardContent>
+            <ProjectCardCover
               src={"/static/the-card-job/project-card-cover.png"}
               alt="suggested job project cover"
             />

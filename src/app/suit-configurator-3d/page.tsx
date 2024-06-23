@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCover from "@/components/project-cover";
+import ProjectHero from "@/components/project-hero";
 import ContentBlock from "@/components/content-block";
 import ProjectInfo from "@/components/project-info";
 import VerticalSpace from "@/components/vertical-space";
@@ -16,7 +16,7 @@ import FullScreenImage from "@/components/full-screen-image";
 export default function Project() {
   return (
     <div className="mt-12 flex flex-col items-center justify-center">
-      <ProjectCover
+      <ProjectHero
         img={{
           src: "/static/the-card-job/project-hero.png",
           alt: "project-hero",

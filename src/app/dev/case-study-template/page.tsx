@@ -1,6 +1,6 @@
 import PlaceholderImage from "@/components/placeholder-image";
 import React from "react";
-import ProjectCover from "@/components/project-cover";
+import ProjectHero from "@/components/project-hero";
 import ContentBlock from "@/components/content-block";
 import ProjectInfo from "@/components/project-info";
 import VerticalSpace from "@/components/vertical-space";
@@ -16,10 +16,10 @@ import ProjectFeature from "@/components/project-feature";
 import Paragraph from "@/components/paragraph";
 import FullScreenImage from "@/components/full-screen-image";
 
-export default function Project() {
+export default function CaseStudyTemplatePage() {
   return (
     <div className="mt-12 flex flex-col items-center justify-center">
-      <ProjectCover
+      <ProjectHero
         img={{
           src: "/static/the-card-job/project-hero.png",
           alt: "project-hero",

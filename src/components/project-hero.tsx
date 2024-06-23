@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { ImageSource } from "@/types";
 
-function ProjectCover({
+function ProjectHero({
   img,
   className,
 }: {
@@ -23,4 +23,4 @@ function ProjectCover({
   );
 }
 
-export default ProjectCover;
+export default ProjectHero;
