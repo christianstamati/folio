@@ -1,5 +1,14 @@
 import { Github, Mail, MapPin } from "lucide-react";
-import ProjectCard from "@/components/project-card";
+import {
+  ProjectCard,
+  ProjectContent,
+  ProjectCover,
+  ProjectCta,
+  ProjectDescription,
+  ProjectIcon,
+  ProjectMetadata,
+  ProjectTitle,
+} from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -41,44 +50,63 @@ export default function Home() {
       </section>
       <section className="flex w-full items-center justify-center px-4 sm:px-8 md:px-16">
         <div className="mb-28 flex w-full flex-col gap-y-20 ml:w-fit">
-          <ProjectCard
-            data={{
-              icon: "/static/the-card-job/project-icon.png",
-              cover: "/static/the-card-job/project-card-cover.png",
-              title: "Configurator 3D",
-              category: "FULLSTACK",
-              year: "2022",
-              shortDescription:
-                "A simple tool showcasing key details that elevate a groom's suit from ordinary to exceptional.",
-              link: "/suit-configurator-3d",
-            }}
-          />
-          <ProjectCard
-            data={{
-              icon: "/static/the-card-job/project-icon.png",
-              cover: "/static/the-card-job/project-card-cover.png",
-              title: "Avatar Manager",
-              category: "UNITY",
-              year: "2020",
-              shortDescription:
-                "A digital experience to guide the groom to build an impeccable wedding suit",
-              link: "/suit-configurator-3d",
-            }}
-            disabled
-          />
-          <ProjectCard
-            data={{
-              icon: "/static/the-card-job/project-icon.png",
-              cover: "/static/the-card-job/project-card-cover.png",
-              title: "Size Suggestion",
-              category: "FULLSTACK",
-              year: "2020",
-              shortDescription:
-                "Redesigning job recommendations based on job seeker activity.",
-              link: "/suit-configurator-3d",
-            }}
-            disabled
-          />
+          <ProjectCard href={"/suit-configurator-3d"}>
+            <ProjectContent>
+              <ProjectIcon
+                src={"/static/the-card-job/project-icon.png"}
+                alt={"project-icon"}
+              />
+              <ProjectTitle>Configurator 3D</ProjectTitle>
+              <ProjectMetadata category={"FULLSTACK"} year={2022} />
+              <ProjectDescription>
+                A simple tool showcasing key details that elevate a groom&apos;s
+                suit from ordinary to exceptional.
+              </ProjectDescription>
+              <ProjectCta>Read the Case Study</ProjectCta>
+            </ProjectContent>
+            <ProjectCover
+              src={"/static/the-card-job/project-card-cover.png"}
+              alt="suggested job project cover"
+            />
+          </ProjectCard>
+          <ProjectCard href={""} disabled>
+            <ProjectContent>
+              <ProjectIcon
+                src={"/static/the-card-job/project-icon.png"}
+                alt={"project-icon"}
+              />
+              <ProjectTitle>My Digital Twin</ProjectTitle>
+              <ProjectMetadata category={"UNITY"} year={2022} />
+              <ProjectDescription>
+                A simple tool showcasing key details that elevate a groom&apos;s
+                suit from ordinary to exceptional.
+              </ProjectDescription>
+              <ProjectCta>Read the Case Study</ProjectCta>
+            </ProjectContent>
+            <ProjectCover
+              src={"/static/the-card-job/project-card-cover.png"}
+              alt="suggested job project cover"
+            />
+          </ProjectCard>
+          <ProjectCard href={""} disabled>
+            <ProjectContent>
+              <ProjectIcon
+                src={"/static/the-card-job/project-icon.png"}
+                alt={"project-icon"}
+              />
+              <ProjectTitle>Size Suggestion</ProjectTitle>
+              <ProjectMetadata category={"UNITY"} year={2022} />
+              <ProjectDescription>
+                A simple tool showcasing key details that elevate a groom&apos;s
+                suit from ordinary to exceptional.
+              </ProjectDescription>
+              <ProjectCta>Read the Case Study</ProjectCta>
+            </ProjectContent>
+            <ProjectCover
+              src={"/static/the-card-job/project-card-cover.png"}
+              alt="suggested job project cover"
+            />
+          </ProjectCard>
         </div>
       </section>
     </main>
