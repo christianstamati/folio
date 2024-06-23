@@ -7,7 +7,7 @@ import VerticalSpace from "@/components/vertical-space";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Download, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import DownloadCvButton from "@/app/about/download-cv-button";
 
 const aboutPage = {
@@ -19,7 +19,7 @@ const aboutPage = {
       },
       to: "present",
       at: "WeWear",
-      header: "Software Developer",
+      header: "Fullstack Developer",
       description:
         "Managed diverse projects in Unity, Unreal, and React. Developed numerous prototypes in Figma and translated UI designs into functional apps. Mainly maintained the We Wear app in Unity and built 3D configurators in Unreal.",
     },
