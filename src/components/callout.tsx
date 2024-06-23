@@ -1,18 +1,18 @@
 import OverlineText from "@/components/overline-text";
 import React from "react";
 
-function Callout({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="rounded-xl bg-secondary px-8 py-6">
-      <OverlineText className="mb-3">{title}</OverlineText>
-      <p>{description}</p>
-    </div>
-  );
+export function Callout({ children }: { children: React.ReactNode }) {
+  return <div className="rounded-xl bg-secondary px-8 py-6">{children}</div>;
 }
-export default Callout;
+
+export function CalloutTitle({ children }: { children: React.ReactNode }) {
+  return <OverlineText className="mb-3">{children}</OverlineText>;
+}
+
+export function CalloutDescription({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <p>{children}</p>;
+}

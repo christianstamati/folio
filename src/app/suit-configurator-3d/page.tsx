@@ -1,12 +1,13 @@
-import PlaceholderImage from "@/components/placeholder-image";
 import React from "react";
 import ProjectCover from "@/components/project-cover";
 import ContentBlock from "@/components/content-block";
 import ProjectInfo from "@/components/project-info";
 import VerticalSpace from "@/components/vertical-space";
-import Callout from "@/components/callout";
-import ImageCaption from "@/components/image-caption";
-import BulletNumber from "@/components/bullet-number";
+import {
+  Callout,
+  CalloutDescription,
+  CalloutTitle,
+} from "@/components/callout";
 import OverlineText from "@/components/overline-text";
 import ProjectFeature from "@/components/project-feature";
 import Paragraph from "@/components/paragraph";
@@ -49,12 +50,17 @@ export default function Project() {
       </ContentBlock>
       <VerticalSpace size={"xl"} />
       <ContentBlock variant="2xl">
-        <Callout
-          title={"PROBLEM"}
-          description={
-            "Choosing the perfect wedding suit presents several challenges, including the need to match the fabric and style to the wedding season and venue, navigating the overwhelming array of fabric options with varying textures, weights, and appearances, and dealing with the limited availability of fabrics in physical stores due to space constraints."
-          }
-        />
+        <Callout>
+          <CalloutTitle>PROBLEM</CalloutTitle>
+          <CalloutDescription>
+            Choosing the perfect wedding suit presents several challenges,
+            including the need to match the fabric and style to the wedding
+            season and venue, navigating the overwhelming array of fabric
+            options with varying textures, weights, and appearances, and dealing
+            with the limited availability of fabrics in physical stores due to
+            space constraints.
+          </CalloutDescription>
+        </Callout>
         <VerticalSpace />
         <p className="p-0 sm:px-8">
           Addressing these challenges requires a comprehensive approach that
@@ -86,12 +92,16 @@ export default function Project() {
           </p>
         </div>
         <VerticalSpace size={"md"} />
-        <Callout
-          title={"OUR VISION"}
-          description={
-            "To position Modesto Bertotto as an innovator in the wedding suit industry, we needed a cross-platform solution that provides clients with expert guidance and the tools to create their own wedding suits. This solution must also offer a high-quality, realistic representation of the fabrics to ensure confidence in their choices"
-          }
-        />
+        <Callout>
+          <CalloutTitle>PROBLEM</CalloutTitle>
+          <CalloutDescription>
+            To position Modesto Bertotto as an innovator in the wedding suit
+            industry, we needed a cross-platform solution that provides clients
+            with expert guidance and the tools to create their own wedding
+            suits. This solution must also offer a high-quality, realistic
+            representation of the fabrics to ensure confidence in their choices
+          </CalloutDescription>
+        </Callout>
       </ContentBlock>
       <VerticalSpace size={"xl"} />
       <ContentBlock>

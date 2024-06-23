@@ -4,7 +4,11 @@ import ProjectCover from "@/components/project-cover";
 import ContentBlock from "@/components/content-block";
 import ProjectInfo from "@/components/project-info";
 import VerticalSpace from "@/components/vertical-space";
-import Callout from "@/components/callout";
+import {
+  Callout,
+  CalloutTitle,
+  CalloutDescription,
+} from "@/components/callout";
 import ImageCaption from "@/components/image-caption";
 import BulletNumber from "@/components/bullet-number";
 import OverlineText from "@/components/overline-text";
@@ -51,15 +55,15 @@ export default function Project() {
       </ContentBlock>
       <VerticalSpace size={"xl"} />
       <ContentBlock variant="2xl">
-        <Callout
-          title={"PROBLEM"}
-          description={
-            "The job card had glaring usability issues and needed to be rebuilt for\n" +
-            "        each new placement, an inefficiency we hoped to correct. Could we\n" +
-            "        redesign the job card to not only improve usability, but also promote\n" +
-            "        consistency and enable powerful testing?"
-          }
-        />
+        <Callout>
+          <CalloutTitle>OUR VISION</CalloutTitle>
+          <CalloutDescription>
+            The job card had glaring usability issues and needed to be rebuilt
+            for each new placement, an inefficiency we hoped to correct. Could
+            we redesign the job card to not only improve usability, but also
+            promote consistency and enable powerful testing?
+          </CalloutDescription>
+        </Callout>
         <VerticalSpace />
         <p className="p-0 sm:px-8">
           Some of our highest traffic pages, like Suggested Jobs and Search
@@ -190,15 +194,15 @@ export default function Project() {
           </p>
         </div>
         <VerticalSpace size={"md"} />
-        <Callout
-          title={"OUR VISION"}
-          description={
-            "We aimed to improve the job cards usability upfront and systemize\n" +
-            " the design for added testing capabilities. We also hoped to use\n" +
-            " the project as a starting point for improving our process of\n" +
-            " implementing reusable components across our product ecosystem."
-          }
-        />
+        <Callout>
+          <CalloutTitle>OUR VISION</CalloutTitle>
+          <CalloutDescription>
+            We aimed to improve the job cards usability upfront and systemize
+            the design for added testing capabilities. We also hoped to use the
+            project as a starting point for improving our process of
+            implementing reusable components across our product ecosystem.
+          </CalloutDescription>
+        </Callout>
       </ContentBlock>
       <VerticalSpace size={"xl"} />
       <ContentBlock>
