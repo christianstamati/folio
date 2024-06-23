@@ -21,12 +21,7 @@ export function ImageCaption({
           alt={img.alt}
         ></Image>
       ) : (
-        <PlaceholderImage
-          width={300}
-          height={300}
-          className="w-full"
-          alt={"caption-placeholder"}
-        />
+        <PlaceholderImage width={300} height={300} className="w-full" />
       )}
       {caption ? (
         <div className="p-4 text-center text-sm text-paragraph">{caption}</div>
