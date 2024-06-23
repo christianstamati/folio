@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectHero from "@/components/project-hero";
 import ContentBlock from "@/components/content-block";
-import ProjectInfo from "@/components/project-info";
+import { ProjectInfo } from "@/components/project-info";
 import VerticalSpace from "@/components/vertical-space";
 import {
   Callout,
@@ -10,10 +10,14 @@ import {
 } from "@/components/callout";
 import OverlineText from "@/components/overline-text";
 import ProjectFeature from "@/components/project-feature";
-import Paragraph from "@/components/paragraph";
+import {
+  Paragraph,
+  ParagraphContent,
+  ParagraphHeader,
+} from "@/components/paragraph";
 import FullScreenImage from "@/components/full-screen-image";
 
-export default function Project() {
+export default function SuitConfiguratorProject() {
   return (
     <div className="mt-12 flex flex-col items-center justify-center">
       <ProjectHero
@@ -130,87 +134,94 @@ export default function Project() {
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
-        <Paragraph
-          indent
-          title="EXPLORATION"
-          content={
-            "As we saw Unreal Engine already offers tools for handling multiple configurations. Instead of reinventing the wheel, we utilized Unreal Engine's built-in Variant Manager. This tool allows for creating variants and assigning properties to in-scene actors. Selecting a particular variant changes the state of the actor in the scene, simplifying the configuration process."
-          }
-        />
+        <Paragraph indent>
+          <ParagraphHeader>EXPLORATION</ParagraphHeader>
+          <ParagraphContent>
+            I started explorations by critically thinking about the types of
+            information that are important to our users, but was met with
+            resistance because of time and engineering constraints. I pivoted to
+            restructuring the information that was already there in a way that
+            would enable us to easily test contents later.
+          </ParagraphContent>
+        </Paragraph>
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
       <FullScreenImage />
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
-        <Paragraph
-          indent
-          title="IMPLEMENTATION"
-          content={
-            " Working with front-end to implement the new job card exposed holes in\n" +
-            "        our outdated design system process. Because of our product\n" +
-            "        organization’s habit of moving quickly and A/B testing everything, many\n" +
-            "        front-end engineers avoided spending the time to create and document a\n" +
-            "        component before it actually proved successful. This was reasonable, but\n" +
-            "        added to ZipRecruiter’s technical debt. Once a test variant won, we\n" +
-            "        resolved to it quickly and moved on."
-          }
-        />
+        <Paragraph indent>
+          <ParagraphHeader>IMPLEMENTATION</ParagraphHeader>
+          <ParagraphContent>
+            Working with front-end to implement the new job card exposed holes
+            in our outdated design system process. Because of our product
+            organization’s habit of moving quickly and A/B testing everything,
+            many front-end engineers avoided spending the time to create and
+            document a component before it actually proved successful. This was
+            reasonable, but added to ZipRecruiter’s technical debt. Once a test
+            variant won, we resolved to it quickly and moved on.
+          </ParagraphContent>
+        </Paragraph>
         <VerticalSpace />
-        <Paragraph
-          indent
-          content={
-            "        I organized meetings with front-end and design stakeholders to figure\n" +
-            "        out how we could combat this issue. We decided to build in time to\n" +
-            "        componentize winning variants and formed a team to take a more wholistic\n" +
-            "        approach to improving our design system workflow. I could speak more to\n" +
-            "        how we’re approaching our design system, but I’ll save that for another\n" +
-            "        time."
-          }
-        />
+        <Paragraph indent>
+          <ParagraphContent>
+            I organized meetings with front-end and design stakeholders to
+            figure out how we could combat this issue. We decided to build in
+            time to componentize winning variants and formed a team to take a
+            more wholistic approach to improving our design system workflow. I
+            could speak more to how we’re approaching our design system, but
+            I’ll save that for another time.
+          </ParagraphContent>
+        </Paragraph>
         <VerticalSpace />
-        <Paragraph
-          indent
-          content={
-            "        With a temporary solution in place, I documented the new job card system\n" +
-            "        and helped stress test the component before finally testing it with job\n" +
-            "        seekers."
-          }
-        />
+        <Paragraph indent>
+          <ParagraphContent>
+            With a temporary solution in place, I documented the new job card
+            system and helped stress test the component before finally testing
+            it with job seekers.
+          </ParagraphContent>
+        </Paragraph>
       </ContentBlock>
       <VerticalSpace size={"xl"} />
       <FullScreenImage />
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
-        <Paragraph
-          indent
-          title="RESULTS"
-          content={
-            "          We tested the new card design on the Suggested Jobs page first and\n" +
-            "          planned to roll it out to other placements with a win. The A/B test\n" +
-            "          revealed that the new card design significantly outperformed the old\n" +
-            "          with a 10% lift in clicks and a 6% lift in applications, a substantial\n" +
-            "          win for what was on the surface, a simple visual UI update. Based on\n" +
-            "          the agreement we made with front-end, the card was componentized and\n" +
-            "          extended to its different placements. It performed similarly in its\n" +
-            "          other placements and even better on iOS and Android, lifting\n" +
-            "          applications by 7% and 8%, respectively."
-          }
-        />
+        <Paragraph indent>
+          <ParagraphHeader>RESULTS</ParagraphHeader>
+          <ParagraphContent>
+            We tested the new card design on the Suggested Jobs page first and
+            planned to roll it out to other placements with a win. The A/B test
+            revealed that the new card design significantly outperformed the old
+            with a 10% lift in clicks and a 6% lift in applications, a
+            substantial win for what was on the surface, a simple visual UI
+            update. Based on the agreement we made with front-end, the card was
+            componentized and extended to its different placements. It performed
+            similarly in its other placements and even better on iOS and
+            Android, lifting applications by 7% and 8%, respectively.
+          </ParagraphContent>
+        </Paragraph>
 
         <VerticalSpace />
-        <Paragraph
-          indent
-          title="SUMMARY"
-          content={
-            "The job card redesign improved our job seekers’ overall experience by making jobs easier to consume—first on Suggested Jobs and later across our entire product suite. Personally, this project gave me some valuable insights:\n" +
-            "\n" +
-            "By systemizing the job card design, I was able to create capabilities for our product management team that would outweigh the initial benefits of simply improving the visual design and hierarchy of the card.\n" +
-            "\n" +
-            "It’s important to be able to adapt to new constraints and moving targets. Building products is rarely cut and dry. As teams work alongside each other, things can change and that’s okay. Changing my angle from what to include to how to include steered the job card to where it is today. \n" +
-            "\n" +
-            "Communicating well and involving the right stakeholders early on can pay huge dividends. In the process of redesigning the job card, I saw an opportunity to improve the way we utilize design systems. Through good communication, I was able to get buy-in and kick off what would be the start of a more mature design system process. "
-          }
-        />
+        <Paragraph indent>
+          <ParagraphHeader>SUMMARY</ParagraphHeader>
+          <ParagraphContent>
+            The job card redesign improved our job seekers’ overall experience
+            by making jobs easier to consume—first on Suggested Jobs and later
+            across our entire product suite. Personally, this project gave me
+            some valuable insights: By systemizing the job card design, I was
+            able to create capabilities for our product management team that
+            would outweigh the initial benefits of simply improving the visual
+            design and hierarchy of the card. It’s important to be able to adapt
+            to new constraints and moving targets. Building products is rarely
+            cut and dry. As teams work alongside each other, things can change
+            and that’s okay. Changing my angle from what to include to how to
+            include steered the job card to where it is today. Communicating
+            well and involving the right stakeholders early on can pay huge
+            dividends. In the process of redesigning the job card, I saw an
+            opportunity to improve the way we utilize design systems. Through
+            good communication, I was able to get buy-in and kick off what would
+            be the start of a more mature design system process.
+          </ParagraphContent>
+        </Paragraph>
         <VerticalSpace />
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>

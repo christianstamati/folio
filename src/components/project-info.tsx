@@ -27,7 +27,7 @@ function ListItems({ header, items }: { header: string; items: string[] }) {
   );
 }
 
-function ProjectInfo({ info }: { info: ProjectInfoData }) {
+export function ProjectInfo({ info }: { info: ProjectInfoData }) {
   return (
     <div className={"w-full"}>
       {/* Project icon */}
@@ -46,7 +46,7 @@ function ProjectInfo({ info }: { info: ProjectInfoData }) {
         <div className="h-1.5 w-1.5 rounded-full bg-neutral-400"></div>
         <span>{info.year}</span>
       </div>
-      {/* Project INFO */}
+      {/* Project METADATA */}
       <div className={"mt-6 flex flex-col gap-12 lg:flex-row"}>
         {/* Project description */}
         <div className="w-full text-base text-primary/70 sm:text-lg lg:w-3/4">
@@ -71,5 +71,3 @@ function ProjectInfo({ info }: { info: ProjectInfoData }) {
     </div>
   );
 }
-
-export default ProjectInfo;

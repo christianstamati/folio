@@ -1,27 +1,25 @@
 import OverlineText from "@/components/overline-text";
 import VerticalSpace from "@/components/vertical-space";
-import React from "react";
+import React, { ReactNode } from "react";
 
-function Paragraph({
-  title,
-  content,
-  indent,
-}: {
-  title?: string;
-  content: string;
-  indent?: boolean;
-}) {
+export function ParagraphHeader({ children }: { children: ReactNode }) {
   return (
-    <div className={`p-0 ${indent ? "sm:px-8" : ""}`}>
-      {title ? (
-        <>
-          <OverlineText>{title}</OverlineText>
-          <VerticalSpace size={"sm"} />
-        </>
-      ) : null}
-      <p>{content}</p>
-    </div>
+    <>
+      <OverlineText>{children}</OverlineText>
+      <VerticalSpace size={"sm"} />
+    </>
   );
 }
+export function ParagraphContent({ children }: { children: ReactNode }) {
+  return <p>{children}</p>;
+}
 
-export default Paragraph;
+export function Paragraph({
+  children,
+  indent,
+}: {
+  children: React.ReactNode;
+  indent?: boolean;
+}) {
+  return <div className={`p-0 ${indent ? "sm:px-8" : ""}`}>{children}</div>;
+}
