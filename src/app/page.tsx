@@ -1,4 +1,4 @@
-import { Github, Mail, MapPin } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import {
   ProjectCard,
   ProjectContent,
@@ -11,21 +11,13 @@ import {
 } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
-function LocationPin() {
-  return (
-    <div className="flex w-full justify-center">
-      <MapPin className="mr-2" />
-      <span className="text-[18px] font-medium">Venice, Italy</span>
-    </div>
-  );
-}
+import { LocationPin } from "@/components/location-pin";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center bg-background">
       <section className="mb-24 mt-32 max-w-xl px-4 text-center sm:my-36">
-        <LocationPin></LocationPin>
+        <LocationPin>Venice, Italy</LocationPin>
         <h1 className="my-4 text-4xl font-bold leading-snug sm:text-6xl">
           Hi, I’m Christian.
         </h1>
