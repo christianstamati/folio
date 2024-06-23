@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 type PlaceholderImageProps = {
   width: number;
   height: number;
-  alt: string;
   className?: string;
 };
 
@@ -14,6 +13,7 @@ function PlaceholderImage({ className, ...rest }: PlaceholderImageProps) {
     <Image
       src={`https://placehold.co/${rest.width}x${rest.height}.png`}
       className={cn("overflow-hidden rounded-2xl", className)}
+      alt={"placeholder-image"}
       {...rest}
     ></Image>
   );

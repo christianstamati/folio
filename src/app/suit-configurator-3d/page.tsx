@@ -1,7 +1,12 @@
 import React from "react";
 import ProjectHero from "@/components/project-hero";
 import ContentBlock from "@/components/content-block";
-import { ProjectInfo } from "@/components/project-info";
+import {
+  ProjectDescription,
+  ProjectInfo,
+  ProjectMetadata,
+  ProjectMetadataHeader,
+} from "@/components/project-info";
 import VerticalSpace from "@/components/vertical-space";
 import {
   Callout,
@@ -9,13 +14,19 @@ import {
   CalloutTitle,
 } from "@/components/callout";
 import OverlineText from "@/components/overline-text";
-import ProjectFeature from "@/components/project-feature";
+import { ProjectFeature } from "@/components/project-feature";
 import {
   Paragraph,
   ParagraphContent,
   ParagraphHeader,
+  ParagraphOverlineHeader,
 } from "@/components/paragraph";
-import FullScreenImage from "@/components/full-screen-image";
+import { FullScreenImage } from "@/components/full-screen-image";
+import { ProjectIcon } from "@/components/project-icon";
+import { Tag } from "@/components/tag";
+import { Dot } from "@/components/dot";
+import { List, ListHeader, ListItem } from "@/components/list";
+import { ImageCaption } from "@/components/image-caption";
 
 export default function SuitConfiguratorProject() {
   return (
@@ -29,28 +40,53 @@ export default function SuitConfiguratorProject() {
         }}
       />
       <ContentBlock className={"-mt-44"}>
-        <ProjectInfo
-          info={{
-            icon: {
+        <ProjectMetadata>
+          <ProjectIcon
+            icon={{
               src: "/static/the-card-job/project-icon.png",
               alt: "cool-project-alt",
-            },
-            title: "Configurator 3D",
-            company: "We Wear",
-            year: "2022",
-            shortDescription:
-              "The moment has arrived to evaluate, choose, and discover the perfect suit for your wedding day. To keep pace with the ever-evolving digital world, Modesto Bertotto has partnered with WeWear to create a tool that helps clients find the perfect wedding suit effortlessly.",
-            role: "Fullstack Developer",
-            responsibilities: ["Unreal Engine", "UI/UX Design", "Prototyping"],
-            team: [
-              "Fabio Albizzati, CEO",
-              "Andrea Scaggiante, Manager",
-              "Riccardo Allievi, 3D Artist",
-              "Giovanni Bucci, Data Scientist",
-              "Vasco Inzoli, Pattern Maker",
-            ],
-          }}
-        />
+            }}
+          />
+          <ProjectMetadataHeader>Configurator 3D</ProjectMetadataHeader>
+          <Tag>
+            <span>We Wear</span>
+            <Dot />
+            <span>2022</span>
+          </Tag>
+          <div className={"mt-6 flex flex-col gap-12 lg:flex-row"}>
+            <ProjectDescription>
+              The moment has arrived to evaluate, choose, and discover the
+              perfect suit for your wedding day. To keep pace with the
+              ever-evolving digital world, Modesto Bertotto has partnered with
+              WeWear to create a tool that helps clients find the perfect
+              wedding suit effortlessly.
+            </ProjectDescription>
+            <div className={"flex w-full flex-col gap-8 xs:flex-row"}>
+              <div className="flex w-full flex-col gap-8">
+                <List>
+                  <ListHeader>ROLE</ListHeader>
+                  <ListItem>Fullstack developer</ListItem>
+                </List>
+                {/* RESPONSIBILITIES */}
+                <List>
+                  <ListHeader>RESPONSIBILITIES</ListHeader>
+                  <ListItem>Unreal Engine</ListItem>
+                  <ListItem>UI/UX Design</ListItem>
+                  <ListItem>Prototyping</ListItem>
+                </List>
+              </div>
+              {/* Team */}
+              <List>
+                <ListHeader>TEAM</ListHeader>
+                <ListItem>Fabio Albizzati, CEO</ListItem>
+                <ListItem>Andrea Scaggiante, Manager</ListItem>
+                <ListItem>Riccardo Allievi, 3D Artist</ListItem>
+                <ListItem>Giovanni Bucci, Data Scientist</ListItem>
+                <ListItem>Vasco Inzoli, Pattern Maker</ListItem>
+              </List>
+            </div>
+          </div>
+        </ProjectMetadata>
       </ContentBlock>
       <VerticalSpace size={"xl"} />
       <ContentBlock variant="2xl">
@@ -97,7 +133,7 @@ export default function SuitConfiguratorProject() {
         </div>
         <VerticalSpace size={"md"} />
         <Callout>
-          <CalloutTitle>PROBLEM</CalloutTitle>
+          <CalloutTitle>OUR VISION</CalloutTitle>
           <CalloutDescription>
             To position Modesto Bertotto as an innovator in the wedding suit
             industry, we needed a cross-platform solution that provides clients
@@ -109,117 +145,146 @@ export default function SuitConfiguratorProject() {
       </ContentBlock>
       <VerticalSpace size={"xl"} />
       <ContentBlock>
-        <ProjectFeature
-          title={"Variant Manager"}
-          content={
-            "We created an Unreal Engine project where all the meshes and materials, crafted by Riccardo and Vasco, are meticulously set up. By integrating these assets into the Variant Manager, we enable seamless interaction between the client and the application. This setup allows for multiple mesh and fabric variants, offering endless possibilities for customization."
-          }
-        />
+        <ProjectFeature>
+          <Paragraph>
+            <ParagraphHeader>Variant Manager</ParagraphHeader>
+            <ParagraphContent>
+              We created an Unreal Engine project where all the meshes and
+              materials, crafted by Riccardo and Vasco, are meticulously set up.
+              By integrating these assets into the Variant Manager, we enable
+              seamless interaction between the client and the application. This
+              setup allows for multiple mesh and fabric variants, offering
+              endless possibilities for customization.
+            </ParagraphContent>
+          </Paragraph>
+          <div className="h-full w-full">
+            <ImageCaption />
+          </div>
+        </ProjectFeature>
         <VerticalSpace size={"xl"}></VerticalSpace>
-
-        <ProjectFeature
-          reverse
-          title={"Export Configuration"}
-          content={
-            "A button that triggers the Unreal Engine application to generate an image of the current render. This image is then passed to the Next.js frontend, which displays it to the user. Additionally, we provided a button that converts the displayed HTML into a PNG image. This allows users to easily export their configurations, take them to the store, and order their custom wedding outfits with confidence."
-          }
-        />
+        <ProjectFeature reverse>
+          <Paragraph>
+            <ParagraphHeader>Export Configuration</ParagraphHeader>
+            <ParagraphContent>
+              A button that triggers the Unreal Engine application to generate
+              an image of the current render. This image is then passed to the
+              Next.js frontend, which displays it to the user. Additionally, we
+              provided a button that converts the displayed HTML into a PNG
+              image. This allows users to easily export their configurations,
+              take them to the store, and order their custom wedding outfits
+              with confidence.
+            </ParagraphContent>
+          </Paragraph>
+          <div className="h-full w-full">
+            <ImageCaption />
+          </div>
+        </ProjectFeature>
         <VerticalSpace size={"xl"}></VerticalSpace>
-        <ProjectFeature
-          title={"Outfit Suggestion"}
-          content={
-            "We implemented a wizard that prompts users with simple, foundational questions. Based on their responses, we provide personalized outfit recommendations for them to begin customizing. Additionally, this approach allows us to optimize the user experience by initiating the Unreal Engine virtual machine in the background while they answer questions. This ensures a seamless and efficient experience for users as they proceed with customizing their ideal wedding outfit."
-          }
-        />
+        <ProjectFeature>
+          <Paragraph>
+            <ParagraphHeader>Outfit Suggestion</ParagraphHeader>
+            <ParagraphContent>
+              We implemented a wizard that prompts users with simple,
+              foundational questions. Based on their responses, we provide
+              personalized outfit recommendations for them to begin customizing.
+              Additionally, this approach allows us to optimize the user
+              experience by initiating the Unreal Engine virtual machine in the
+              background while they answer questions. This ensures a seamless
+              and efficient experience for users as they proceed with
+              customizing their ideal wedding outfit.
+            </ParagraphContent>
+          </Paragraph>
+          <div className="h-full w-full">
+            <ImageCaption />
+          </div>
+        </ProjectFeature>
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
-        <Paragraph indent>
-          <ParagraphHeader>EXPLORATION</ParagraphHeader>
+        <Paragraph>
+          <ParagraphOverlineHeader>IMPLEMENTATION</ParagraphOverlineHeader>
           <ParagraphContent>
-            I started explorations by critically thinking about the types of
-            information that are important to our users, but was met with
-            resistance because of time and engineering constraints. I pivoted to
-            restructuring the information that was already there in a way that
-            would enable us to easily test contents later.
+            Instead of reinventing the wheel, we utilized Unreal Engine&apos;s
+            built-in Variant Manager. This tool allows for creating variants and
+            assigning properties to in-scene actors. Selecting a particular
+            variant changes the state of the actor in the scene, simplifying the
+            configuration process. Through extensive tests and research with the
+            Variant Manager, we created a functional prototype in Unreal Engine.
           </ParagraphContent>
         </Paragraph>
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
+      <ContentBlock
+        className="flex flex-col items-start gap-4 xs:flex-row"
+        variant="3xl"
+      >
+        <ImageCaption caption={"First variant manager tests"} />
+        <ImageCaption caption={"Prototype made in unreal engine"} />
+      </ContentBlock>
+      <VerticalSpace size={"xl"}></VerticalSpace>
+      <ContentBlock variant={"2xl"}>
+        <Paragraph>
+          <ParagraphContent>
+            We selected Next.js and Tailwind CSS for the frontend stack. Despite
+            my background in game development (Unity and Unreal), I quickly
+            adapted to web development. My goal was to create a basic frontend
+            with a WebSocket client to communicate with the Unreal App. Here are
+            some initial tests of WebSocket communication:
+          </ParagraphContent>
+        </Paragraph>
+        <VerticalSpace size={"lg"}></VerticalSpace>
+
+        <ImageCaption caption={"Web socket communication"} />
+
+        <VerticalSpace size={"lg"}></VerticalSpace>
+
+        <Paragraph>
+          <ParagraphContent>
+            We opted to create all UI elements using web technologies for their
+            simplicity and lightweight nature. Unreal Engine&apos;s primary
+            focus is on 3D rendering. Here is a look at the first complete
+            prototype:
+          </ParagraphContent>
+        </Paragraph>
+        <VerticalSpace size={"lg"}></VerticalSpace>
+        <ImageCaption caption={"First prototype image"} />
+      </ContentBlock>
+      <VerticalSpace size={"xl"}></VerticalSpace>
+      <ContentBlock variant={"2xl"}>
+        <Paragraph indent>
+          <ParagraphOverlineHeader>RESULTS</ParagraphOverlineHeader>
+          <ParagraphContent>
+            After working closely with the team to bring the idea to life, we
+            finally launched the solution on the brand website, and we are
+            excited about the results. After weeks of monitoring, we achieved
+            our most important goal: increasing website visitors. Despite the
+            startup time of the solution being around 2 minutes, most users
+            stayed on the platform and engaged with the experience. A small
+            percentage did not wait for the experience to load, which is a
+            technological constraint we plan to address in the future by
+            improving startup times.
+          </ParagraphContent>
+        </Paragraph>
+      </ContentBlock>
+      <VerticalSpace size={"xl"}></VerticalSpace>
+
       <FullScreenImage />
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
         <Paragraph indent>
-          <ParagraphHeader>IMPLEMENTATION</ParagraphHeader>
+          <ParagraphOverlineHeader>SUMMARY</ParagraphOverlineHeader>
           <ParagraphContent>
-            Working with front-end to implement the new job card exposed holes
-            in our outdated design system process. Because of our product
-            organization’s habit of moving quickly and A/B testing everything,
-            many front-end engineers avoided spending the time to create and
-            document a component before it actually proved successful. This was
-            reasonable, but added to ZipRecruiter’s technical debt. Once a test
-            variant won, we resolved to it quickly and moved on.
-          </ParagraphContent>
-        </Paragraph>
-        <VerticalSpace />
-        <Paragraph indent>
-          <ParagraphContent>
-            I organized meetings with front-end and design stakeholders to
-            figure out how we could combat this issue. We decided to build in
-            time to componentize winning variants and formed a team to take a
-            more wholistic approach to improving our design system workflow. I
-            could speak more to how we’re approaching our design system, but
-            I’ll save that for another time.
-          </ParagraphContent>
-        </Paragraph>
-        <VerticalSpace />
-        <Paragraph indent>
-          <ParagraphContent>
-            With a temporary solution in place, I documented the new job card
-            system and helped stress test the component before finally testing
-            it with job seekers.
-          </ParagraphContent>
-        </Paragraph>
-      </ContentBlock>
-      <VerticalSpace size={"xl"} />
-      <FullScreenImage />
-      <VerticalSpace size={"xl"}></VerticalSpace>
-      <ContentBlock variant={"2xl"}>
-        <Paragraph indent>
-          <ParagraphHeader>RESULTS</ParagraphHeader>
-          <ParagraphContent>
-            We tested the new card design on the Suggested Jobs page first and
-            planned to roll it out to other placements with a win. The A/B test
-            revealed that the new card design significantly outperformed the old
-            with a 10% lift in clicks and a 6% lift in applications, a
-            substantial win for what was on the surface, a simple visual UI
-            update. Based on the agreement we made with front-end, the card was
-            componentized and extended to its different placements. It performed
-            similarly in its other placements and even better on iOS and
-            Android, lifting applications by 7% and 8%, respectively.
-          </ParagraphContent>
-        </Paragraph>
-
-        <VerticalSpace />
-        <Paragraph indent>
-          <ParagraphHeader>SUMMARY</ParagraphHeader>
-          <ParagraphContent>
-            The job card redesign improved our job seekers’ overall experience
-            by making jobs easier to consume—first on Suggested Jobs and later
-            across our entire product suite. Personally, this project gave me
-            some valuable insights: By systemizing the job card design, I was
-            able to create capabilities for our product management team that
-            would outweigh the initial benefits of simply improving the visual
-            design and hierarchy of the card. It’s important to be able to adapt
-            to new constraints and moving targets. Building products is rarely
-            cut and dry. As teams work alongside each other, things can change
-            and that’s okay. Changing my angle from what to include to how to
-            include steered the job card to where it is today. Communicating
-            well and involving the right stakeholders early on can pay huge
-            dividends. In the process of redesigning the job card, I saw an
-            opportunity to improve the way we utilize design systems. Through
-            good communication, I was able to get buy-in and kick off what would
-            be the start of a more mature design system process.
+            In this project, I integrated Unreal Engine and Next.js with cloud
+            streaming, which was an amazing learning opportunity where I
+            acquired skills in Tailwind and Next.js, among others. However, if
+            given another chance, I would approach several aspects differently:
+            I would better distinguish between server and client components,
+            avoiding unnecessary &quot;use client&quot; directives; improve page
+            structure by moving some logic to the layout page for better
+            organization; and utilize component libraries like shadcn for a more
+            consistent look and feel. Despite these challenges, the project was
+            immensely rewarding and helped me unlock a new, valuable skill set
+            for the future.
           </ParagraphContent>
         </Paragraph>
         <VerticalSpace />

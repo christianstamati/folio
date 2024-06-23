@@ -5,13 +5,14 @@ import {
   ProjectCardCover,
   ProjectCardCta,
   ProjectCardDescription,
-  ProjectCardIcon,
   ProjectCardMetadata,
   ProjectCardTitle,
 } from "@/components/project-card";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LocationPin } from "@/components/location-pin";
+import { ProjectIcon } from "@/components/project-icon";
 
 export default function Home() {
   return (
@@ -44,9 +45,11 @@ export default function Home() {
         <div className="mb-28 flex w-full flex-col gap-y-20 ml:w-fit">
           <ProjectCard href={"/suit-configurator-3d"}>
             <ProjectCardContent>
-              <ProjectCardIcon
-                src={"/static/the-card-job/project-icon.png"}
-                alt={"project-icon"}
+              <ProjectIcon
+                icon={{
+                  src: "/static/the-card-job/project-icon.png",
+                  alt: "project-icon",
+                }}
               />
               <ProjectCardTitle>Configurator 3D</ProjectCardTitle>
               <ProjectCardMetadata category={"FULLSTACK"} year={2022} />
@@ -63,9 +66,11 @@ export default function Home() {
           </ProjectCard>
           <ProjectCard href={""} disabled>
             <ProjectCardContent>
-              <ProjectCardIcon
-                src={"/static/the-card-job/project-icon.png"}
-                alt={"project-icon"}
+              <ProjectIcon
+                icon={{
+                  src: "/static/the-card-job/project-icon.png",
+                  alt: "project-icon",
+                }}
               />
               <ProjectCardTitle>My Digital Twin</ProjectCardTitle>
               <ProjectCardMetadata category={"UNITY"} year={2022} />
@@ -82,9 +87,11 @@ export default function Home() {
           </ProjectCard>
           <ProjectCard href={""} disabled>
             <ProjectCardContent>
-              <ProjectCardIcon
-                src={"/static/the-card-job/project-icon.png"}
-                alt={"project-icon"}
+              <ProjectIcon
+                icon={{
+                  src: "/static/the-card-job/project-icon.png",
+                  alt: "project-icon",
+                }}
               />
               <ProjectCardTitle>Size Suggestion</ProjectCardTitle>
               <ProjectCardMetadata category={"UNITY"} year={2022} />

@@ -52,10 +52,10 @@ export function ProjectInfo({ info }: { info: ProjectInfoData }) {
         <div className="w-full text-base text-primary/70 sm:text-lg lg:w-3/4">
           {info.shortDescription}
         </div>
-        {/* Role and Team */}
+        {/* List and Team */}
         <div className={"flex w-full flex-col gap-8 xs:flex-row"}>
           <div className="flex w-full flex-col gap-8">
-            {/* Role */}
+            {/* List */}
             <ListItems header={"ROLE"} items={[info.role]} />
 
             {/* RESPONSIBILITIES */}
@@ -70,4 +70,28 @@ export function ProjectInfo({ info }: { info: ProjectInfoData }) {
       </div>
     </div>
   );
+}
+
+export function ProjectDescription({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="w-full text-base text-primary/70 sm:text-lg lg:w-3/4">
+      {children}
+    </div>
+  );
+}
+
+export function ProjectMetadataHeader({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <h1 className="mb-4 mt-4 text-5xl font-bold">{children}</h1>;
+}
+
+export function ProjectMetadata({ children }: { children: React.ReactNode }) {
+  return <div className={"w-full"}>{children}</div>;
 }

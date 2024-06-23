@@ -3,7 +3,7 @@ import Image from "next/image";
 import PlaceholderImage from "@/components/placeholder-image";
 import React from "react";
 
-function ImageCaption({
+export function ImageCaption({
   img,
   caption,
 }: {
@@ -34,5 +34,3 @@ function ImageCaption({
     </div>
   );
 }
-
-export default ImageCaption;

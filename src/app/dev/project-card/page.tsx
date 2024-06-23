@@ -5,18 +5,20 @@ import {
   ProjectCardCover,
   ProjectCardCta,
   ProjectCardDescription,
-  ProjectCardIcon,
   ProjectCardTitle,
 } from "@/components/project-card";
+import { ProjectIcon } from "@/components/project-icon";
 
 export default function ProjectCardDev() {
   return (
     <div>
       <ProjectCard href={""} disabled>
         <ProjectCardContent>
-          <ProjectCardIcon
-            src={"/static/the-card-job/project-icon.png"}
-            alt={"project-icon"}
+          <ProjectIcon
+            icon={{
+              src: "/static/the-card-job/project-icon.png",
+              alt: "project-icon",
+            }}
           />
           <ProjectCardTitle>Configurator 3D</ProjectCardTitle>
           <ProjectCardMetadata category={"FULLSTACK"} year={2022} />

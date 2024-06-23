@@ -26,18 +26,6 @@ export function ProjectCardContent({ children }: { children: ReactNode }) {
   );
 }
 
-export function ProjectCardIcon({ src, alt }: { src: string; alt: string }) {
-  return (
-    <Image
-      className="h-6 w-6 sm:h-8 sm:w-8"
-      src={src}
-      alt={alt}
-      width={32}
-      height={32}
-    />
-  );
-}
-
 export function ProjectCardTitle({ children }: { children: React.ReactNode }) {
   return (
     <h2 className="mb-1 mt-4 text-2xl font-bold sm:mb-3 sm:mt-6 sm:text-4xl">
