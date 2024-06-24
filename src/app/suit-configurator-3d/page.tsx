@@ -20,15 +20,11 @@ import {
   ParagraphHeader,
   ParagraphOverlineHeader,
 } from "@/components/paragraph";
-import { FullScreenImage } from "@/components/full-screen-image";
 import { ProjectIcon } from "@/components/project-icon";
 import { Tag } from "@/components/tag";
 import { Dot } from "@/components/dot";
 import { List, ListHeader, ListItem } from "@/components/list";
-import { ImageCaption } from "@/components/image-caption";
 import { Video } from "@/components/video";
-import Image from "next/image";
-import PlaceholderImage from "@/components/placeholder-image";
 
 export default function SuitConfiguratorProject() {
   return (
@@ -244,7 +240,7 @@ export default function SuitConfiguratorProject() {
         className="flex flex-col items-start gap-4 xs:flex-row"
         variant="3xl"
       >
-        <div className="flex w-full flex-col">
+        <div className="flex w-full flex-col gap-4">
           <Video
             src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/vm-tests.mp4"
             height={1080}
@@ -258,7 +254,7 @@ export default function SuitConfiguratorProject() {
             Variant manager first test
           </div>
         </div>
-        <div className="flex w-full flex-col">
+        <div className="flex w-full flex-col gap-4">
           <Video
             src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/ue-prototype.mp4"
             height={1080}
@@ -285,7 +281,7 @@ export default function SuitConfiguratorProject() {
           </ParagraphContent>
         </Paragraph>
         <VerticalSpace size={"lg"}></VerticalSpace>
-        <div className="flex w-full flex-col">
+        <div className="flex w-full flex-col gap-4">
           <Video
             src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/ws.mp4"
             height={1080}
@@ -296,7 +292,7 @@ export default function SuitConfiguratorProject() {
             loop
           />
           <div className="p-4 text-center text-sm text-paragraph">
-            Unreal prototype
+            Websocket communication test
           </div>
         </div>
         <VerticalSpace size={"lg"}></VerticalSpace>
@@ -309,7 +305,7 @@ export default function SuitConfiguratorProject() {
           </ParagraphContent>
         </Paragraph>
         <VerticalSpace size={"lg"}></VerticalSpace>
-        <div className="flex w-full flex-col">
+        <div className="flex w-full flex-col gap-4">
           <Video
             src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/first-app-prototype.mp4"
             height={1080}
@@ -343,8 +339,8 @@ export default function SuitConfiguratorProject() {
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
 
-      <div className="flex w-full items-center justify-center bg-neutral-100 px-4 py-16">
-        <div className="flex flex-col">
+      <div className="flex w-full items-center justify-center bg-primary/5 px-4 py-16">
+        <div className="flex flex-col gap-4">
           <Video
             className="max-w-3xl"
             src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/360.mp4"

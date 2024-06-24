@@ -68,15 +68,15 @@ export default function Home() {
             <ProjectCardContent>
               <ProjectIcon
                 icon={{
-                  src: "/static/the-card-job/project-icon.png",
+                  src: "/static/size-suggestion/project-icon.png",
                   alt: "project-icon",
                 }}
               />
-              <ProjectCardTitle>My Digital Twin</ProjectCardTitle>
-              <ProjectCardMetadata category={"UNITY"} year={2022} />
+              <ProjectCardTitle>Size Suggestion</ProjectCardTitle>
+              <ProjectCardMetadata category={"FULLSTACK"} year={2023} />
               <ProjectCardDescription>
-                A simple tool showcasing key details that elevate a groom&apos;s
-                suit from ordinary to exceptional.
+                Showcase interactive 3D models and size fitting on any device
+                with We Wear&apos;s embeddable widget.
               </ProjectCardDescription>
               <ProjectCardCta>Read the Case Study</ProjectCardCta>
             </ProjectCardContent>
@@ -89,20 +89,20 @@ export default function Home() {
             <ProjectCardContent>
               <ProjectIcon
                 icon={{
-                  src: "/static/the-card-job/project-icon.png",
+                  src: "/static/my-digital-twin/project-icon.png",
                   alt: "project-icon",
                 }}
               />
-              <ProjectCardTitle>Size Suggestion</ProjectCardTitle>
-              <ProjectCardMetadata category={"UNITY"} year={2022} />
+              <ProjectCardTitle>My Digital Twin</ProjectCardTitle>
+              <ProjectCardMetadata category={"UNITY"} year={2021} />
               <ProjectCardDescription>
-                A simple tool showcasing key details that elevate a groom&apos;s
-                suit from ordinary to exceptional.
+                Manage authenticity, ownership, and data permissions of digital
+                twins with blockchain technology.
               </ProjectCardDescription>
               <ProjectCardCta>Read the Case Study</ProjectCardCta>
             </ProjectCardContent>
             <ProjectCardCover
-              src={"/static/the-card-job/project-card-cover.png"}
+              src={"/static/my-digital-twin/project-cover.png"}
               alt="suggested job project cover"
             />
           </ProjectCard>
