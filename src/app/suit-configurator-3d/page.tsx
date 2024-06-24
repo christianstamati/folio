@@ -26,13 +26,16 @@ import { Tag } from "@/components/tag";
 import { Dot } from "@/components/dot";
 import { List, ListHeader, ListItem } from "@/components/list";
 import { ImageCaption } from "@/components/image-caption";
+import { Video } from "@/components/video";
+import Image from "next/image";
+import PlaceholderImage from "@/components/placeholder-image";
 
 export default function SuitConfiguratorProject() {
   return (
     <div className="mt-12 flex flex-col items-center justify-center">
       <ProjectHero
         img={{
-          src: "/static/configurator-3d/project-hero.png?v=2",
+          src: "/static/configurator-3d/project-hero.png",
           alt: "project-hero",
           width: 1920,
           height: 1080,
@@ -42,7 +45,7 @@ export default function SuitConfiguratorProject() {
         <ProjectMetadata>
           <ProjectIcon
             icon={{
-              src: "/static/the-card-job/project-icon.png",
+              src: "/static/configurator-3d/project-icon.png",
               alt: "cool-project-alt",
             }}
           />
@@ -157,7 +160,15 @@ export default function SuitConfiguratorProject() {
             </ParagraphContent>
           </Paragraph>
           <div className="h-full w-full">
-            <ImageCaption />
+            <Video
+              src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/variant-manager.mp4"
+              height={1080}
+              width={1080}
+              playsInline
+              autoPlay
+              muted
+              loop
+            />
           </div>
         </ProjectFeature>
         <VerticalSpace size={"xl"}></VerticalSpace>
@@ -175,7 +186,15 @@ export default function SuitConfiguratorProject() {
             </ParagraphContent>
           </Paragraph>
           <div className="h-full w-full">
-            <ImageCaption />
+            <Video
+              src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/export-config.mp4"
+              height={1080}
+              width={1080}
+              playsInline
+              autoPlay
+              muted
+              loop
+            />
           </div>
         </ProjectFeature>
         <VerticalSpace size={"xl"}></VerticalSpace>
@@ -194,7 +213,15 @@ export default function SuitConfiguratorProject() {
             </ParagraphContent>
           </Paragraph>
           <div className="h-full w-full">
-            <ImageCaption />
+            <Video
+              src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/outfit-recommender.mp4"
+              height={1080}
+              width={1080}
+              playsInline
+              autoPlay
+              muted
+              loop
+            />
           </div>
         </ProjectFeature>
       </ContentBlock>
@@ -217,8 +244,34 @@ export default function SuitConfiguratorProject() {
         className="flex flex-col items-start gap-4 xs:flex-row"
         variant="3xl"
       >
-        <ImageCaption caption={"First variant manager tests"} />
-        <ImageCaption caption={"Prototype made in unreal engine"} />
+        <div className="flex w-full flex-col">
+          <Video
+            src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/vm-tests.mp4"
+            height={1080}
+            width={1080}
+            playsInline
+            autoPlay
+            muted
+            loop
+          />
+          <div className="p-4 text-center text-sm text-paragraph">
+            Variant manager first test
+          </div>
+        </div>
+        <div className="flex w-full flex-col">
+          <Video
+            src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/ue-prototype.mp4"
+            height={1080}
+            width={1080}
+            playsInline
+            autoPlay
+            muted
+            loop
+          />
+          <div className="p-4 text-center text-sm text-paragraph">
+            Unreal prototype
+          </div>
+        </div>
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
@@ -232,7 +285,20 @@ export default function SuitConfiguratorProject() {
           </ParagraphContent>
         </Paragraph>
         <VerticalSpace size={"lg"}></VerticalSpace>
-        <ImageCaption caption={"Web socket communication"} />
+        <div className="flex w-full flex-col">
+          <Video
+            src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/ws.mp4"
+            height={1080}
+            width={1080}
+            playsInline
+            autoPlay
+            muted
+            loop
+          />
+          <div className="p-4 text-center text-sm text-paragraph">
+            Unreal prototype
+          </div>
+        </div>
         <VerticalSpace size={"lg"}></VerticalSpace>
         <Paragraph>
           <ParagraphContent>
@@ -243,7 +309,20 @@ export default function SuitConfiguratorProject() {
           </ParagraphContent>
         </Paragraph>
         <VerticalSpace size={"lg"}></VerticalSpace>
-        <ImageCaption caption={"First prototype image"} />
+        <div className="flex w-full flex-col">
+          <Video
+            src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/first-app-prototype.mp4"
+            height={1080}
+            width={1080}
+            playsInline
+            autoPlay
+            muted
+            loop
+          />
+          <div className="p-4 text-center text-sm text-paragraph">
+            Cloud streaming prototype
+          </div>
+        </div>
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
@@ -263,7 +342,24 @@ export default function SuitConfiguratorProject() {
         </Paragraph>
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
-      <FullScreenImage />
+
+      <div className="flex w-full items-center justify-center bg-neutral-100 px-4 py-16">
+        <div className="flex flex-col">
+          <Video
+            className="max-w-3xl"
+            src="https://s3.eu-central-1.amazonaws.com/chri.dev/configurator-3d/360.mp4"
+            height={1080}
+            width={1080}
+            playsInline
+            autoPlay
+            muted
+            loop
+          />
+          <div className="p-4 text-center text-sm text-paragraph">
+            Final release running on desktop
+          </div>
+        </div>
+      </div>
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
         <Paragraph indent>
