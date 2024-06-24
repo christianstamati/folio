@@ -47,7 +47,7 @@ export default function Home() {
             <ProjectCardContent>
               <ProjectIcon
                 icon={{
-                  src: "/static/the-card-job/project-icon.png",
+                  src: "/static/configurator-3d/project-icon.png?v=3",
                   alt: "project-icon",
                 }}
               />
@@ -60,7 +60,7 @@ export default function Home() {
               <ProjectCardCta>Read the Case Study</ProjectCardCta>
             </ProjectCardContent>
             <ProjectCardCover
-              src={"/static/the-card-job/project-card-cover.png"}
+              src={"/static/configurator-3d/card-cover.png?v=1"}
               alt="suggested job project cover"
             />
           </ProjectCard>

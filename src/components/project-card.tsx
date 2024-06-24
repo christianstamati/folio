@@ -1,8 +1,26 @@
-import React, { ReactNode } from "react";
+"use client";
+import React, { createContext, ReactNode, useContext } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { clsx } from "clsx";
+import { useRouter } from "next/navigation";
+
+type ContextProps = {
+  disabled: boolean;
+};
+
+const ProjectCardContext = createContext<ContextProps | undefined>(undefined);
+
+const useProjectCardContext = () => {
+  const context = useContext(ProjectCardContext);
+  if (!context) {
+    throw new Error(
+      "useProjectCardContext must be used within a ProjectCardContext",
+    );
+  }
+  return context;
+};
 
 export function ProjectCardCover({ src, alt }: { src: string; alt: string }) {
   return (
@@ -11,8 +29,10 @@ export function ProjectCardCover({ src, alt }: { src: string; alt: string }) {
         className="h-full w-full max-w-2xl object-cover"
         src={src}
         alt={alt}
-        width={200}
-        height={100}
+        width={900}
+        height={800}
+        priority
+        quality={100}
       />
     </div>
   );
@@ -63,6 +83,16 @@ export function ProjectCardDescription({
 }
 
 export function ProjectCardCta({ children }: { children: React.ReactNode }) {
+  const ctx = useProjectCardContext();
+
+  if (ctx.disabled) {
+    return (
+      <div className="flex w-fit gap-x-4 rounded-xl bg-primary/10 p-3 text-[16px] text-primary sm:translate-y-full sm:text-[18px] sm:opacity-0 sm:transition-all sm:duration-300 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
+        <span>This case study isn&apos;t ready yet</span>
+      </div>
+    );
+  }
+
   return (
     <button className="flex w-fit gap-x-4 rounded-xl bg-background p-4 text-[16px] sm:text-[18px]">
       <span>{children}</span>
@@ -81,17 +111,25 @@ export function ProjectCard({
   disabled?: boolean;
 }) {
   return (
-    <Link
-      href={href}
-      className={clsx(
-        "flex w-full flex-col overflow-hidden rounded-3xl bg-secondary transition-all duration-300 hover:scale-100 hover:bg-secondary/70 sm:hover:scale-105 sm:hover:shadow-2xl ml:w-[900px] ml:flex-row",
-        {
-          "pointer-events-none opacity-50 sm:hover:scale-100 sm:hover:shadow-none":
-            disabled,
-        },
+    <ProjectCardContext.Provider value={{ disabled: disabled ?? false }}>
+      {disabled ? (
+        <div
+          className={clsx(
+            `group flex w-full cursor-not-allowed flex-col overflow-hidden rounded-3xl bg-secondary ml:w-[900px] ml:flex-row`,
+          )}
+        >
+          {children}
+        </div>
+      ) : (
+        <Link
+          href={href}
+          className={clsx(
+            `flex w-full flex-col overflow-hidden rounded-3xl bg-secondary transition-all duration-300 hover:scale-100 hover:bg-secondary/70 sm:hover:scale-105 sm:hover:shadow-2xl ml:w-[900px] ml:flex-row`,
+          )}
+        >
+          {children}
+        </Link>
       )}
-    >
-      {children}
-    </Link>
+    </ProjectCardContext.Provider>
   );
 }

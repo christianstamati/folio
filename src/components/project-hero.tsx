@@ -18,6 +18,8 @@ function ProjectHero({
         alt={img.alt}
         width={img.width}
         height={img.height}
+        priority={true}
+        quality={100}
       />
     </div>
   );

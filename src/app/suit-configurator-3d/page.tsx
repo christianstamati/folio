@@ -3,7 +3,6 @@ import ProjectHero from "@/components/project-hero";
 import ContentBlock from "@/components/content-block";
 import {
   ProjectDescription,
-  ProjectInfo,
   ProjectMetadata,
   ProjectMetadataHeader,
 } from "@/components/project-info";
@@ -33,7 +32,7 @@ export default function SuitConfiguratorProject() {
     <div className="mt-12 flex flex-col items-center justify-center">
       <ProjectHero
         img={{
-          src: "/static/the-card-job/project-hero.png",
+          src: "/static/configurator-3d/project-hero.png?v=2",
           alt: "project-hero",
           width: 1920,
           height: 1080,
@@ -65,7 +64,7 @@ export default function SuitConfiguratorProject() {
               <div className="flex w-full flex-col gap-8">
                 <List>
                   <ListHeader>ROLE</ListHeader>
-                  <ListItem>Fullstack developer</ListItem>
+                  <ListItem>Fullstack Developer</ListItem>
                 </List>
                 {/* RESPONSIBILITIES */}
                 <List>
@@ -233,11 +232,8 @@ export default function SuitConfiguratorProject() {
           </ParagraphContent>
         </Paragraph>
         <VerticalSpace size={"lg"}></VerticalSpace>
-
         <ImageCaption caption={"Web socket communication"} />
-
         <VerticalSpace size={"lg"}></VerticalSpace>
-
         <Paragraph>
           <ParagraphContent>
             We opted to create all UI elements using web technologies for their
@@ -267,7 +263,6 @@ export default function SuitConfiguratorProject() {
         </Paragraph>
       </ContentBlock>
       <VerticalSpace size={"xl"}></VerticalSpace>
-
       <FullScreenImage />
       <VerticalSpace size={"xl"}></VerticalSpace>
       <ContentBlock variant={"2xl"}>
