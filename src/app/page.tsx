@@ -54,8 +54,8 @@ export default function Home() {
               <ProjectCardTitle>Configurator 3D</ProjectCardTitle>
               <ProjectCardMetadata category={"FULLSTACK"} year={2022} />
               <ProjectCardDescription>
-                A simple tool showcasing key details that elevate a groom&apos;s
-                suit from ordinary to exceptional.
+                Effortlessly find the ideal suit with high-quality cloud
+                rendering and personalized guidance.
               </ProjectCardDescription>
               <ProjectCardCta>Read the Case Study</ProjectCardCta>
             </ProjectCardContent>
