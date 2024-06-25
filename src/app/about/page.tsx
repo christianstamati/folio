@@ -151,7 +151,7 @@ export default function About() {
           CHRISTIAN STAMATI
         </OverlineText>
         <h1 className="max-w-2xl pb-8 text-3xl font-bold sm:text-4xl">
-          Building digital experiences with unity, unreal and react.
+          Building digital products with unity, unreal and react.
         </h1>
         <div className="flex w-full flex-col gap-4 sm:w-fit sm:flex-row">
           <Link href={"/contact"}>
