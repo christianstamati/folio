@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   title: "Christian Stamati — Fullstack Developer",
   description: "On a mission to build products people love",
   icons: [{ rel: "icon", url: "/favicon.png" }],
+  openGraph: {
+    images: [
+      {
+        width: 1200,
+        height: 630,
+        url: "/static/images/social-share.png",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
