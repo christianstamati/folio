@@ -49,7 +49,7 @@ const aboutPage = {
       at: "Self-employed worker",
       header: "Videographer",
       description:
-        "Wrote screenplays at university. Worked with Adobe Premiere and Resolve to edit and grade the videos for social media. Had experience with professional cameras and lights in studio and shoot numerous videos on gimbal.",
+        "Wrote screenplays at university. Worked with Adobe Premiere and Resolve to edit and grade the videos for social media. Had experience with professional cameras and lights in studio and shot numerous videos on gimbal.",
     },
   ] as ExperienceData[],
   education: [

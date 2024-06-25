@@ -15,12 +15,12 @@ function Experience({ experience }: ExperienceProps) {
   const toDate =
     experience.to === "present"
       ? "Present"
-      : formatDate(experience.from.year, experience.from.month);
+      : formatDate(experience.to.year, experience.to.month);
 
   const date = `${formatDate(experience.from.year, experience.from.month)} — ${toDate}`;
 
   return (
-    <div className="text-base sm:text-lg ">
+    <div className="text-base sm:text-lg">
       <div className="mb-1 flex items-center justify-between">
         <h2 className="text-lg font-bold sm:text-xl">{experience.header}</h2>
         <div className="text-sm sm:text-base">{date}</div>
