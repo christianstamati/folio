@@ -21,12 +21,15 @@ export async function sendEmail(
     ? `New Portfolio Message from  ${name}`
     : "New Portfolio Message";
 
+  const emailTo = env.AWS_SES_EMAIL_TO;
+
   try {
     return new Promise((resolve, reject) => {
       transporter.sendMail(
         {
+          // email of user
           from: "hello@christianstamati.com",
-          to: "christian.stamati@gmail.com",
+          to: emailTo,
           subject,
           html: `
           <html>

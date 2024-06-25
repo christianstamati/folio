@@ -11,6 +11,7 @@ export const env = createEnv({
   server: {
     AWS_SES_SMTP_USER: z.string(),
     AWS_SES_SMTP_PASSWORD: z.string(),
+    AWS_SES_EMAIL_TO: z.string().email(),
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
   client: {},
