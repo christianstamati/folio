@@ -18,7 +18,7 @@ const aboutPage = {
         month: 11,
       },
       to: "present",
-      at: "WeWear",
+      at: "We Wear",
       header: "Fullstack Developer",
       description:
         "Managed diverse projects in Unity, Unreal, and React. Developed numerous prototypes in Figma and translated UI designs into functional apps. Mainly maintained the We Wear app in Unity and built 3D configurators in Unreal.",
@@ -105,12 +105,12 @@ const aboutPage = {
     {
       header: "Programming",
       description:
-        "Demonstrates proficiency in C# with additional expertise in JavaScript, Python, C++, and Blueprints. Possesses adaptability to quickly learn and work with new programming languages as required.",
+        "Proficiency in C# with additional expertise in JavaScript, Python, C++, and Blueprints. Possesses adaptability to quickly learn and work with new programming languages as required.",
     },
     {
       header: "3D",
       description:
-        "Possesses a foundational understanding and practical knowledge of 3D modeling software, specifically demonstrating proficiency in both Blender and Maya. ",
+        "Foundational understanding and practical knowledge of 3D modeling software, specifically demonstrating proficiency in both Blender and Maya. ",
     },
   ],
 };
@@ -140,10 +140,12 @@ export default function About() {
       <div className="mb-36 mt-20 flex flex-col items-center justify-center px-6 text-center sm:mt-36">
         <Image
           className={"rounded-full shadow-xl"}
-          src={"/static/images/me.png"}
+          src={"/static/images/me.jpg"}
           alt={"me"}
           width={150}
           height={150}
+          priority
+          quality={100}
         />
         <OverlineText className="mb-3 mt-8 font-medium">
           CHRISTIAN STAMATI

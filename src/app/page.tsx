@@ -81,8 +81,8 @@ export default function Home() {
               <ProjectCardCta>Read the Case Study</ProjectCardCta>
             </ProjectCardContent>
             <ProjectCardCover
-              src={"/static/the-card-job/project-card-cover.png"}
-              alt="suggested job project cover"
+              src={"/static/size-suggestion/project-cover.png"}
+              alt="size-suggestion-cover"
             />
           </ProjectCard>
           <ProjectCard href={""} disabled>
