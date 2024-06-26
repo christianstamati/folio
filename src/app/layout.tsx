@@ -9,10 +9,7 @@ import React from "react";
 import Footer from "@/app/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { env } from "@/env";
-import GradientBackground from "@/components/gradient-background";
-import { Logo } from "@/components/logo";
-import VerticalSpace from "@/components/vertical-space";
-import Link from "next/link";
+import { Maintenance } from "@/components/maintenance";
 
 export const metadata: Metadata = {
   title: "Christian Stamati — Fullstack Developer",
@@ -46,35 +43,16 @@ export default function RootLayout({
     return (
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`font-sans ${GeistSans.variable} ${GeistMono.variable} flex h-svh flex-col items-center`}
+          className={`font-sans ${GeistSans.variable} ${GeistMono.variable} h-svh`}
         >
-          <GradientBackground />
-          <Logo className="py-12 text-4xl"></Logo>
-
-          <div className="flex h-full w-full flex-col items-center justify-center p-4 text-center">
-            <h1 className="max-w-sm text-3xl font-semibold sm:max-w-lg sm:text-4xl">
-              The site is under construction maintenance!
-            </h1>
-            <VerticalSpace />
-            <p className="max-w-md">
-              The website is currently undergoing scheduled maintenance, it will
-              be back soon! Thank you for being so patient. Contact me for more
-              information!
-            </p>
-            <VerticalSpace />
-            <Link href="mailto:hello@chri.dev" className="font-bold underline">
-              hello@chri.dev
-            </Link>
-            <VerticalSpace size="xl" />
-          </div>
+          <Maintenance />
         </body>
       </html>
     );
   }
 
-  const headersList = headers();
-  const pathname = headersList.get("x-pathname");
-  const isDev = pathname?.includes("dev");
+  const isDev = headers().get("x-pathname")?.includes("dev");
+
   if (isDev) {
     return (
       <html lang="en" suppressHydrationWarning>
@@ -107,10 +85,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+
           {children}
+
           <div className={`glass fixed bottom-0 left-0 right-0 z-50 sm:hidden`}>
             <Nav className="flex justify-center" />
           </div>
+
           <Footer />
           <Toaster />
         </ThemeProvider>
