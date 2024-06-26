@@ -5,6 +5,7 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import { Home, User, Folder, Message, Category } from "react-iconly";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 
 const navigation = [
   {
@@ -91,9 +92,7 @@ function Header() {
     >
       <header className="grid min-h-16 w-full max-w-7xl grid-cols-[1fr_50vw_1fr] sm:grid-cols-[1fr_min-content_1fr]">
         <div className="flex items-center justify-center sm:justify-start">
-          <Link href={"/"} className="ml-0 sm:ml-4">
-            <span className={"text-xl font-bold"}>chri.dev</span>
-          </Link>
+          <Logo className={"ml-0 sm:ml-4"} />
         </div>
         <div className="row-start-1 flex sm:row-start-auto">
           <Nav className="hidden sm:flex" />
