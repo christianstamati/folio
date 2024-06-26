@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/app/theme-provider";
 import React from "react";
 import Footer from "@/app/footer";
 import { Toaster } from "@/components/ui/toaster";
+import { env } from "@/env";
 
 export const metadata: Metadata = {
   title: "Christian Stamati — Fullstack Developer",
@@ -37,6 +38,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (env.UNDER_MAINTENANCE === "true") {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`font-sans ${GeistSans.variable} ${GeistMono.variable} h-svh`}
+        >
+          <div className="flex h-screen items-center justify-center">
+            <div>THE SITE IS UNDER MAINTENANCE</div>
+          </div>
+        </body>
+      </html>
+    );
+  }
+
   const headersList = headers();
   const pathname = headersList.get("x-pathname");
   const isDev = pathname?.includes("dev");
