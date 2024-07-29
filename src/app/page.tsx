@@ -18,13 +18,17 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center bg-background">
       <section className="mb-24 mt-32 max-w-xl px-4 text-center sm:my-36">
-        <LocationPin>Venice, Italy</LocationPin>
+        <LocationPin>Italy</LocationPin>
         <h1 className="my-4 text-4xl font-bold leading-snug sm:text-6xl">
           Hi, I’m Christian.
         </h1>
         <p>
-          On a mission to build products people love, <br /> I turn ideas into
-          digital products.
+          I&apos;m a developer with a strong interest in web apps.
+          <br />
+          On a mission to{" "}
+          <strong className="text-foreground">
+            build products people love.
+          </strong>
         </p>
         <div className="mt-6 flex w-full flex-col justify-center gap-2 sm:flex-row">
           <Link href={"/contact"}>

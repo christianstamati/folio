@@ -37,20 +37,6 @@ const aboutPage = {
       description:
         "Oversaw the technical aspects of Unreal in the execution of a virtual production experiment. Managed the setup of the Unreal project for VP and crafted tools to enhance navigation within the virtual set, ensuring a seamless and efficient production process.",
     },
-    {
-      from: {
-        year: 2018,
-        month: 9,
-      },
-      to: {
-        year: 2020,
-        month: 11,
-      },
-      at: "Self-employed worker",
-      header: "Videographer",
-      description:
-        "Wrote screenplays at university. Worked with Adobe Premiere and Resolve to edit and grade the videos for social media. Had experience with professional cameras and lights in studio and shot numerous videos on gimbal.",
-    },
   ] as ExperienceData[],
   education: [
     {
@@ -151,7 +137,8 @@ export default function About() {
           CHRISTIAN STAMATI
         </OverlineText>
         <h1 className="max-w-2xl pb-8 text-3xl font-bold sm:text-4xl">
-          Building digital products with unity, unreal and react.
+          Building digital products using cutting-edge technologies and
+          frameworks
         </h1>
         <div className="flex w-full flex-col gap-4 sm:w-fit sm:flex-row">
           <Link href={"/contact"}>

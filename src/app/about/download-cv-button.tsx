@@ -8,7 +8,10 @@ function DownloadCvButton() {
   return (
     <Button
       onClick={() => {
-        downloadFile("christian_stamati_cv_en", "/static/cv/cv_en.pdf");
+        downloadFile(
+          "christian-stamati-cv-en",
+          "/static/cv/christian-stamati-cv-en.pdf",
+        );
       }}
       variant="secondary"
       size={"lg"}
