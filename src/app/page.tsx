@@ -23,12 +23,9 @@ export default function Home() {
           Hi, I’m Christian.
         </h1>
         <p>
-          I&apos;m a developer with a strong interest in web apps.
+          A human with a strong interest in web-apps.
           <br />
-          On a mission to{" "}
-          <strong className="text-foreground">
-            build products people love.
-          </strong>
+          On a mission to build products people love.
         </p>
         <div className="mt-6 flex w-full flex-col justify-center gap-2 sm:flex-row">
           <Link href={"/contact"}>
